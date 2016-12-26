@@ -1,19 +1,33 @@
-﻿//  Copyright 2015 Stefan Negritoiu (FreeBusy). See LICENSE file for more information.
-
-using System;
-using System.Collections.Generic;
-
-namespace AlexaSkillsKit.UI
-{
-    public class PlainTextOutputSpeech : OutputSpeech
+﻿// --------------------------------------------------------------------------------------------------------------------
+// <copyright company="" file="PlainTextOutputSpeech.cs">
+//   
+// </copyright>
+// <summary>
+//   The plain text output speech.
+// </summary>
+// 
+// --------------------------------------------------------------------------------------------------------------------
+namespace AlexaSkillsKit .UI
     {
-        public override string Type {
-            get { return "PlainText";  }
-        }
+        /// <summary>
+        ///     The plain text output speech.
+        /// </summary>
+        public class PlainTextOutputSpeech : OutputSpeech
+            {
+                /// <summary>
+                ///     Gets or sets the text.
+                /// </summary>
+                public virtual string Text { get ; set ; }
 
-        public virtual string Text {
-            get;
-            set;
-        }
+                /// <summary>
+                ///     Gets the type.
+                /// </summary>
+                public override string Type
+                    {
+                        get
+                            {
+                                return "PlainText" ;
+                            }
+                    }
+            }
     }
-}

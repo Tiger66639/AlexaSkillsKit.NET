@@ -1,114 +1,209 @@
-﻿// As discussed at http://stackoverflow.com/a/5097066
-
-using System;
-using System.Collections.Generic;
-using System.Threading;
-using System.Threading.Tasks;
-
+﻿// --------------------------------------------------------------------------------------------------------------------
+// <copyright company="" file="AsyncHelpers.cs">
+//   
+// </copyright>
+// <summary>
+//   The async helpers.
+// </summary>
+// 
+// --------------------------------------------------------------------------------------------------------------------
 namespace AlexaSkillsKit
-{
-    public static class AsyncHelpers
     {
         /// <summary>
-        /// Execute's an async Task<T> method which has a void return value synchronously
+        ///     The async helpers.
         /// </summary>
-        /// <param name="task">Task<T> method to execute</param>
-        public static void RunSync(Func<Task> task) {
-            var oldContext = SynchronizationContext.Current;
-            var synch = new ExclusiveSynchronizationContext();
-            SynchronizationContext.SetSynchronizationContext(synch);
-            synch.Post(async _ => {
-                try {
-                    await task();
-                }
-                catch (Exception e) {
-                    synch.InnerException = e;
-                    throw;
-                }
-                finally {
-                    synch.EndMessageLoop();
-                }
-            }, null);
-            synch.BeginMessageLoop();
-
-            SynchronizationContext.SetSynchronizationContext(oldContext);
-        }
-
-        /// <summary>
-        /// Execute's an async Task<T> method which has a T return type synchronously
-        /// </summary>
-        /// <typeparam name="T">Return Type</typeparam>
-        /// <param name="task">Task<T> method to execute</param>
-        /// <returns></returns>
-        public static T RunSync<T>(Func<Task<T>> task) {
-            var oldContext = SynchronizationContext.Current;
-            var synch = new ExclusiveSynchronizationContext();
-            SynchronizationContext.SetSynchronizationContext(synch);
-            T ret = default(T);
-            synch.Post(async _ => {
-                try {
-                    ret = await task();
-                }
-                catch (Exception e) {
-                    synch.InnerException = e;
-                    throw;
-                }
-                finally {
-                    synch.EndMessageLoop();
-                }
-            }, null);
-            synch.BeginMessageLoop();
-            SynchronizationContext.SetSynchronizationContext(oldContext);
-            return ret;
-        }
-
-        private class ExclusiveSynchronizationContext : SynchronizationContext
-        {
-            private bool done;
-            public Exception InnerException { get; set; }
-            readonly AutoResetEvent workItemsWaiting = new AutoResetEvent(false);
-            readonly Queue<Tuple<SendOrPostCallback, object>> items =
-                new Queue<Tuple<SendOrPostCallback, object>>();
-
-            public override void Send(SendOrPostCallback d, object state) {
-                throw new NotSupportedException("We cannot send to our same thread");
-            }
-
-            public override void Post(SendOrPostCallback d, object state) {
-                lock (items) {
-                    items.Enqueue(Tuple.Create(d, state));
-                }
-                workItemsWaiting.Set();
-            }
-
-            public void EndMessageLoop() {
-                Post(_ => done = true, null);
-            }
-
-            public void BeginMessageLoop() {
-                while (!done) {
-                    Tuple<SendOrPostCallback, object> task = null;
-                    lock (items) {
-                        if (items.Count > 0) {
-                            task = items.Dequeue();
-                        }
-                    }
-                    if (task != null) {
-                        task.Item1(task.Item2);
-                        if (InnerException != null) // the method threw an exeption
+        public static class AsyncHelpers
+            {
+                /// <summary>
+                /// The run sync.
+                /// </summary>
+                /// <param name="task">
+                /// The task.
+                /// </param>
+                public static void RunSync( System . Func<System . Threading . Tasks . Task> task )
                     {
-                            throw new AggregateException("AsyncHelpers.Run method threw an exception.", InnerException);
-                        }
-                    }
-                    else {
-                        workItemsWaiting.WaitOne();
-                    }
-                }
-            }
+                        var oldContext = System . Threading . SynchronizationContext . Current ;
+                        var synch = new ExclusiveSynchronizationContext() ;
+                        System . Threading . SynchronizationContext . SetSynchronizationContext(synch) ;
+                        synch . Post(
+                            async _ =>
+                                {
+                                    try
+                                    {
+                                        await task() ;
+                                    }
+                                    catch (System . Exception e)
+                                    {
+                                        synch . InnerException = e ;
+                                        throw ;
+                                    }
+                                    finally
+                                    {
+                                        synch . EndMessageLoop() ;
+                                    }
+                                },
+                            null) ;
+                        synch . BeginMessageLoop() ;
 
-            public override SynchronizationContext CreateCopy() {
-                return this;
+                        System . Threading . SynchronizationContext . SetSynchronizationContext(oldContext) ;
+                    }
+
+                /// <summary>
+                /// The run sync.
+                /// </summary>
+                /// <typeparam name="T">
+                /// </typeparam>
+                /// <param name="task">
+                /// The task.
+                /// </param>
+                /// <returns>
+                /// The <see cref="T"/> .
+                /// </returns>
+                public static T RunSync<T>( System . Func<System . Threading . Tasks . Task<T>> task )
+                    {
+                        var oldContext = System . Threading . SynchronizationContext . Current ;
+                        var synch = new ExclusiveSynchronizationContext() ;
+                        System . Threading . SynchronizationContext . SetSynchronizationContext(synch) ;
+                        T ret = default (T) ;
+                        synch . Post(
+                            async _ =>
+                                {
+                                    try
+                                    {
+                                        ret = await task() ;
+                                    }
+                                    catch (System . Exception e)
+                                    {
+                                        synch . InnerException = e ;
+                                        throw ;
+                                    }
+                                    finally
+                                    {
+                                        synch . EndMessageLoop() ;
+                                    }
+                                },
+                            null) ;
+                        synch . BeginMessageLoop() ;
+                        System . Threading . SynchronizationContext . SetSynchronizationContext(oldContext) ;
+                        return ret ;
+                    }
+
+                /// <summary>
+                ///     The exclusive synchronization context.
+                /// </summary>
+                private class ExclusiveSynchronizationContext : System . Threading . SynchronizationContext
+                    {
+                        /// <summary>
+                        ///     The items.
+                        /// </summary>
+                        private readonly System . Collections . Generic . Queue<System . Tuple<System . Threading . SendOrPostCallback, object>> items =
+                                new System . Collections . Generic . Queue
+                                    <System . Tuple<System . Threading . SendOrPostCallback, object>>() ;
+
+                        /// <summary>
+                        ///     The work <see cref="items" /> waiting.
+                        /// </summary>
+                        private readonly System . Threading . AutoResetEvent workItemsWaiting =
+                            new System . Threading . AutoResetEvent(false) ;
+
+                        /// <summary>
+                        ///     The done.
+                        /// </summary>
+                        private bool done ;
+
+                        /// <summary>
+                        ///     Gets or sets the inner exception.
+                        /// </summary>
+                        public System . Exception InnerException { get ; set ; }
+
+                        /// <summary>
+                        ///     The begin message loop.
+                        /// </summary>
+                        /// <exception cref="AggregateException" />
+                        public void BeginMessageLoop( )
+                            {
+                                while (! this . done)
+                                {
+                                    System . Tuple<System . Threading . SendOrPostCallback, object> task = null ;
+                                    lock (this . items)
+                                    {
+                                        if (this . items . Count > 0)
+                                        {
+                                            task = this . items . Dequeue() ;
+                                        }
+                                    }
+
+                                    if (task != null)
+                                    {
+                                        task . Item1(task . Item2) ;
+                                        if (this . InnerException != null)
+                                        {
+                                            // the method threw an exeption
+                                            throw new System . AggregateException(
+                                                      "AsyncHelpers.Run method threw an exception.",
+                                                      this . InnerException) ;
+                                        }
+                                    }
+                                    else
+                                    {
+                                        this . workItemsWaiting . WaitOne() ;
+                                    }
+                                }
+                            }
+
+                        /// <summary>
+                        ///     The create copy.
+                        /// </summary>
+                        /// <returns>
+                        ///     The <see cref="SynchronizationContext" /> .
+                        /// </returns>
+                        public override System . Threading . SynchronizationContext CreateCopy( )
+                            {
+                                return this ;
+                            }
+
+                        /// <summary>
+                        ///     The end message loop.
+                        /// </summary>
+                        public void EndMessageLoop( )
+                            {
+                                this . Post(_ => this . done = true, null) ;
+                            }
+
+                        /// <summary>
+                        /// The post.
+                        /// </summary>
+                        /// <param name="d">
+                        /// The d.
+                        /// </param>
+                        /// <param name="state">
+                        /// The state.
+                        /// </param>
+                        public override void Post( System . Threading . SendOrPostCallback d, object state )
+                            {
+                                lock (this . items)
+                                {
+                                    this . items . Enqueue(System . Tuple . Create(d, state)) ;
+                                }
+
+                                this . workItemsWaiting . Set() ;
+                            }
+
+                        /// <summary>
+                        /// The send.
+                        /// </summary>
+                        /// <param name="d">
+                        /// The d.
+                        /// </param>
+                        /// <param name="state">
+                        /// The state.
+                        /// </param>
+                        /// <exception cref="NotSupportedException">
+                        /// </exception>
+                        public override void Send( System . Threading . SendOrPostCallback d, object state )
+                            {
+                                throw new System . NotSupportedException("We cannot send to our same thread") ;
+                            }
+                    }
             }
-        }
     }
-}

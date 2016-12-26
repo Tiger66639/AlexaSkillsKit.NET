@@ -1,19 +1,33 @@
-﻿//  Copyright 2015 Stefan Negritoiu (FreeBusy). See LICENSE file for more information.
-
-using System;
-using System.Collections.Generic;
-
-namespace AlexaSkillsKit.UI
-{
-    public class SsmlOutputSpeech : OutputSpeech
+﻿// --------------------------------------------------------------------------------------------------------------------
+// <copyright company="" file="SsmlOutputSpeech.cs">
+//   
+// </copyright>
+// <summary>
+//   The ssml output speech.
+// </summary>
+// 
+// --------------------------------------------------------------------------------------------------------------------
+namespace AlexaSkillsKit .UI
     {
-        public override string Type {
-            get { return "SSML";  }
-        }
+        /// <summary>
+        ///     The ssml output speech.
+        /// </summary>
+        public class SsmlOutputSpeech : OutputSpeech
+            {
+                /// <summary>
+                ///     Gets or sets the ssml.
+                /// </summary>
+                public virtual string Ssml { get ; set ; }
 
-        public virtual string Ssml {
-            get;
-            set;
-        }
+                /// <summary>
+                ///     Gets the type.
+                /// </summary>
+                public override string Type
+                    {
+                        get
+                            {
+                                return "SSML" ;
+                            }
+                    }
+            }
     }
-}

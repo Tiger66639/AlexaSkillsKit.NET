@@ -1,18 +1,30 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using Microsoft.Owin;
-using Owin;
-
-[assembly: OwinStartup(typeof(Sample.Startup))]
+﻿// --------------------------------------------------------------------------------------------------------------------
+// <copyright company="" file="Startup.cs">
+//   
+// </copyright>
+// <summary>
+//   The startup.
+// </summary>
+// 
+// --------------------------------------------------------------------------------------------------------------------
+[assembly : Microsoft . Owin . OwinStartup( typeof (Sample . Startup) )]
 
 namespace Sample
-{
-    public partial class Startup
     {
-        public void Configuration(IAppBuilder app)
-        {
-            ConfigureAuth(app);
-        }
+        /// <summary>
+        ///     The startup.
+        /// </summary>
+        public partial class Startup
+            {
+                /// <summary>
+                /// The configuration.
+                /// </summary>
+                /// <param name="app">
+                /// The app.
+                /// </param>
+                public void Configuration( Owin . IAppBuilder app )
+                    {
+                        this . ConfigureAuth(app) ;
+                    }
+            }
     }
-}

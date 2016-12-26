@@ -36,6 +36,15 @@
       <HintPath>..\packages\BouncyCastle.1.8.1\lib\BouncyCastle.Crypto.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="JaStDev.DataCore">
+      <HintPath>F:\Designer\Trunk\external libs\JaStDev.DataCore.dll</HintPath>
+    </Reference>
+    <Reference Include="JaStDev.LogService">
+      <HintPath>F:\Designer\Trunk\external libs\JaStDev.LogService.dll</HintPath>
+    </Reference>
+    <Reference Include="JaStDev.WPFLog">
+      <HintPath>F:\Designer\Trunk\external libs\JaStDev.WPFLog.dll</HintPath>
+    </Reference>
     <Reference Include="Newtonsoft.Json, Version=7.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.7.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
       <Private>True</Private>
@@ -90,6 +99,16 @@
   <ItemGroup>
     <None Include="app.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="F:\Designer\Trunk\Designer\Designer.csproj">
+      <Project>{aaf10b91-98fa-46c0-bb4a-e4018001d3ee}</Project>
+      <Name>Designer</Name>
+    </ProjectReference>
+    <ProjectReference Include="F:\Designer\Trunk\HAB\HAB.csproj">
+      <Project>{2cdd4836-1ac7-47c8-b878-5af7ea721b2b}</Project>
+      <Name>HAB</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

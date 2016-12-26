@@ -1,0 +1,872 @@
+WebException @26.12.2016 08:10:04
+Der Remotename konnte nicht aufgelöst werden: 'gcop.watch.masoud.g.e'
+*******************************************************
+WebException @26.12.2016 08:10:26
+Der Remotename konnte nicht aufgelöst werden: 'gcop.watch.masoud.g.e'
+*******************************************************
+ArgumentException @26.12.2016 08:10:47
+Ein Element mit dem gleichen Schlüssel wurde bereits hinzugefügt.
+System.ArgumentException: Ein Element mit dem gleichen Schlüssel wurde bereits hinzugefügt.
+   bei System.ThrowHelper.ThrowArgumentException(ExceptionResource resource)
+   bei System.Collections.Generic.Dictionary`2.Insert(TKey key, TValue value, Boolean add)
+   bei System.Collections.Generic.Dictionary`2.Add(TKey key, TValue value)
+   bei GCop.Utilities.DteExtensions.GetProjectFromFilePath(String filePath)
+   bei GCop.Core.Settings.VisualStudioSettingsValidator.IsContextValid(Rule rule, SyntaxTree tree, IEnumerable`1 references)
+*******************************************************
+WebException @26.12.2016 08:11:45
+Der Remotename konnte nicht aufgelöst werden: 'gcop.watch.masoud.g.e'
+*******************************************************
+WebException @26.12.2016 08:13:10
+Der Remotename konnte nicht aufgelöst werden: 'gcop.watch.masoud.g.e'
+*******************************************************
+WebException @26.12.2016 08:14:31
+Der Remotename konnte nicht aufgelöst werden: 'gcop.watch.masoud.g.e'
+*******************************************************
+WebException @26.12.2016 08:15:43
+Der Remotename konnte nicht aufgelöst werden: 'gcop.watch.masoud.g.e'
+*******************************************************
+WebException @26.12.2016 08:16:43
+Der Remotename konnte nicht aufgelöst werden: 'gcop.watch.masoud.g.e'
+*******************************************************
+WebException @26.12.2016 08:17:46
+Der Remotename konnte nicht aufgelöst werden: 'gcop.watch.masoud.g.e'
+*******************************************************
+WebException @26.12.2016 08:18:40
+Der Remotename konnte nicht aufgelöst werden: 'gcop.watch.masoud.g.e'
+Actual error is :
+Falscher Parameter. (Ausnahme von HRESULT: 0x80070057 (E_INVALIDARG))
+*******************************************************
+WebException @26.12.2016 08:18:48
+Der Remotename konnte nicht aufgelöst werden: 'gcop.watch.masoud.g.e'
+*******************************************************
+WebException @26.12.2016 08:19:48
+Der Remotename konnte nicht aufgelöst werden: 'gcop.watch.masoud.g.e'
+*******************************************************
+WebException @26.12.2016 08:20:02
+Der Remotename konnte nicht aufgelöst werden: 'gcop.watch.masoud.g.e'
+*******************************************************
+WebException @26.12.2016 08:20:48
+Der Remotename konnte nicht aufgelöst werden: 'gcop.watch.masoud.g.e'
+*******************************************************
+WebException @26.12.2016 08:21:57
+Der Remotename konnte nicht aufgelöst werden: 'gcop.watch.masoud.g.e'
+*******************************************************
+WebException @26.12.2016 08:23:52
+Der Remotename konnte nicht aufgelöst werden: 'gcop.watch.masoud.g.e'
+*******************************************************
+ArgumentException @26.12.2016 08:24:30
+Ein Element mit dem gleichen Schlüssel wurde bereits hinzugefügt.
+System.ArgumentException: Ein Element mit dem gleichen Schlüssel wurde bereits hinzugefügt.
+   bei System.ThrowHelper.ThrowArgumentException(ExceptionResource resource)
+   bei System.Collections.Generic.Dictionary`2.Insert(TKey key, TValue value, Boolean add)
+   bei System.Collections.Generic.Dictionary`2.Add(TKey key, TValue value)
+   bei GCop.Utilities.DteExtensions.GetProjectFromFilePath(String filePath)
+   bei GCop.Core.Settings.VisualStudioSettingsValidator.IsContextValid(Rule rule, SyntaxTree tree, IEnumerable`1 references)
+*******************************************************
+ArgumentException @26.12.2016 08:24:56
+Ein Element mit dem gleichen Schlüssel wurde bereits hinzugefügt.
+System.ArgumentException: Ein Element mit dem gleichen Schlüssel wurde bereits hinzugefügt.
+   bei System.ThrowHelper.ThrowArgumentException(ExceptionResource resource)
+   bei System.Collections.Generic.Dictionary`2.Insert(TKey key, TValue value, Boolean add)
+   bei System.Collections.Generic.Dictionary`2.Add(TKey key, TValue value)
+   bei GCop.Utilities.DteExtensions.GetProjectFromFilePath(String filePath)
+   bei GCop.Core.Settings.VisualStudioSettingsValidator.IsContextValid(Rule rule, SyntaxTree tree, IEnumerable`1 references)
+*******************************************************
+WebException @26.12.2016 08:24:56
+Der Remotename konnte nicht aufgelöst werden: 'gcop.watch.masoud.g.e'
+*******************************************************
+WebException @26.12.2016 08:26:10
+Der Remotename konnte nicht aufgelöst werden: 'gcop.watch.masoud.g.e'
+*******************************************************
+WebException @26.12.2016 08:27:35
+Der Remotename konnte nicht aufgelöst werden: 'gcop.watch.masoud.g.e'
+*******************************************************
+ArgumentException @26.12.2016 08:28:02
+Ein Element mit dem gleichen Schlüssel wurde bereits hinzugefügt.
+System.ArgumentException: Ein Element mit dem gleichen Schlüssel wurde bereits hinzugefügt.
+   bei System.ThrowHelper.ThrowArgumentException(ExceptionResource resource)
+   bei System.Collections.Generic.Dictionary`2.Insert(TKey key, TValue value, Boolean add)
+   bei System.Collections.Generic.Dictionary`2.Add(TKey key, TValue value)
+   bei GCop.Utilities.DteExtensions.GetProjectFromFilePath(String filePath)
+   bei GCop.Core.Settings.VisualStudioSettingsValidator.IsContextValid(Rule rule, SyntaxTree tree, IEnumerable`1 references)
+*******************************************************
+WebException @26.12.2016 08:28:39
+Der Remotename konnte nicht aufgelöst werden: 'gcop.watch.masoud.g.e'
+*******************************************************
+WebException @26.12.2016 08:29:42
+Der Remotename konnte nicht aufgelöst werden: 'gcop.watch.masoud.g.e'
+*******************************************************
+WebException @26.12.2016 08:30:01
+Der Remotename konnte nicht aufgelöst werden: 'gcop.watch.masoud.g.e'
+*******************************************************
+WebException @26.12.2016 08:30:46
+Der Remotename konnte nicht aufgelöst werden: 'gcop.watch.masoud.g.e'
+*******************************************************
+ArgumentException @26.12.2016 08:31:17
+Ein Element mit dem gleichen Schlüssel wurde bereits hinzugefügt.
+System.ArgumentException: Ein Element mit dem gleichen Schlüssel wurde bereits hinzugefügt.
+   bei System.ThrowHelper.ThrowArgumentException(ExceptionResource resource)
+   bei System.Collections.Generic.Dictionary`2.Insert(TKey key, TValue value, Boolean add)
+   bei System.Collections.Generic.Dictionary`2.Add(TKey key, TValue value)
+   bei GCop.Utilities.DteExtensions.GetProjectFromFilePath(String filePath)
+   bei GCop.Core.Settings.VisualStudioSettingsValidator.IsContextValid(Rule rule, SyntaxTree tree, IEnumerable`1 references)
+*******************************************************
+WebException @26.12.2016 08:31:47
+Der Remotename konnte nicht aufgelöst werden: 'gcop.watch.masoud.g.e'
+*******************************************************
+WebException @26.12.2016 08:32:47
+Der Remotename konnte nicht aufgelöst werden: 'gcop.watch.masoud.g.e'
+*******************************************************
+ArgumentException @26.12.2016 08:33:30
+Ein Element mit dem gleichen Schlüssel wurde bereits hinzugefügt.
+System.ArgumentException: Ein Element mit dem gleichen Schlüssel wurde bereits hinzugefügt.
+   bei System.ThrowHelper.ThrowArgumentException(ExceptionResource resource)
+   bei System.Collections.Generic.Dictionary`2.Insert(TKey key, TValue value, Boolean add)
+   bei System.Collections.Generic.Dictionary`2.Add(TKey key, TValue value)
+   bei GCop.Utilities.DteExtensions.GetProjectFromFilePath(String filePath)
+   bei GCop.Core.Settings.VisualStudioSettingsValidator.IsContextValid(Rule rule, SyntaxTree tree, IEnumerable`1 references)
+*******************************************************
+WebException @26.12.2016 08:33:50
+Der Remotename konnte nicht aufgelöst werden: 'gcop.watch.masoud.g.e'
+*******************************************************
+ArgumentException @26.12.2016 08:34:01
+Ein Element mit dem gleichen Schlüssel wurde bereits hinzugefügt.
+System.ArgumentException: Ein Element mit dem gleichen Schlüssel wurde bereits hinzugefügt.
+   bei System.ThrowHelper.ThrowArgumentException(ExceptionResource resource)
+   bei System.Collections.Generic.Dictionary`2.Insert(TKey key, TValue value, Boolean add)
+   bei System.Collections.Generic.Dictionary`2.Add(TKey key, TValue value)
+   bei GCop.Utilities.DteExtensions.GetProjectFromFilePath(String filePath)
+   bei GCop.Core.Settings.VisualStudioSettingsValidator.IsContextValid(Rule rule, SyntaxTree tree, IEnumerable`1 references)
+*******************************************************
+ArgumentException @26.12.2016 08:34:32
+Ein Element mit dem gleichen Schlüssel wurde bereits hinzugefügt.
+System.ArgumentException: Ein Element mit dem gleichen Schlüssel wurde bereits hinzugefügt.
+   bei System.ThrowHelper.ThrowArgumentException(ExceptionResource resource)
+   bei System.Collections.Generic.Dictionary`2.Insert(TKey key, TValue value, Boolean add)
+   bei System.Collections.Generic.Dictionary`2.Add(TKey key, TValue value)
+   bei GCop.Utilities.DteExtensions.GetProjectFromFilePath(String filePath)
+   bei GCop.Core.Settings.VisualStudioSettingsValidator.IsContextValid(Rule rule, SyntaxTree tree, IEnumerable`1 references)
+*******************************************************
+WebException @26.12.2016 08:34:54
+Der Remotename konnte nicht aufgelöst werden: 'gcop.watch.masoud.g.e'
+*******************************************************
+WebException @26.12.2016 08:44:30
+Der Remotename konnte nicht aufgelöst werden: 'gcop.watch.masoud.g.e'
+*******************************************************
+WebException @26.12.2016 08:44:55
+Der Remotename konnte nicht aufgelöst werden: 'gcop.watch.masoud.g.e'
+*******************************************************
+WebException @26.12.2016 08:45:56
+Der Remotename konnte nicht aufgelöst werden: 'gcop.watch.masoud.g.e'
+*******************************************************
+WebException @26.12.2016 08:46:58
+Der Remotename konnte nicht aufgelöst werden: 'gcop.watch.masoud.g.e'
+*******************************************************
+ArgumentException @26.12.2016 08:47:05
+Ein Element mit dem gleichen Schlüssel wurde bereits hinzugefügt.
+System.ArgumentException: Ein Element mit dem gleichen Schlüssel wurde bereits hinzugefügt.
+   bei System.ThrowHelper.ThrowArgumentException(ExceptionResource resource)
+   bei System.Collections.Generic.Dictionary`2.Insert(TKey key, TValue value, Boolean add)
+   bei System.Collections.Generic.Dictionary`2.Add(TKey key, TValue value)
+   bei GCop.Utilities.DteExtensions.GetProjectFromFilePath(String filePath)
+   bei GCop.Core.Settings.VisualStudioSettingsValidator.IsContextValid(Rule rule, SyntaxTree tree, IEnumerable`1 references)
+*******************************************************
+WebException @26.12.2016 08:47:58
+Der Remotename konnte nicht aufgelöst werden: 'gcop.watch.masoud.g.e'
+*******************************************************
+WebException @26.12.2016 08:48:58
+Der Remotename konnte nicht aufgelöst werden: 'gcop.watch.masoud.g.e'
+*******************************************************
+WebException @26.12.2016 08:50:49
+Der Remotename konnte nicht aufgelöst werden: 'gcop.watch.masoud.g.e'
+*******************************************************
+WebException @26.12.2016 09:03:31
+Der Remotename konnte nicht aufgelöst werden: 'gcop.watch.masoud.g.e'
+*******************************************************
+WebException @26.12.2016 09:03:57
+Der Remotename konnte nicht aufgelöst werden: 'gcop.watch.masoud.g.e'
+*******************************************************
+ArgumentException @26.12.2016 09:04:44
+Ein Element mit dem gleichen Schlüssel wurde bereits hinzugefügt.
+System.ArgumentException: Ein Element mit dem gleichen Schlüssel wurde bereits hinzugefügt.
+   bei System.ThrowHelper.ThrowArgumentException(ExceptionResource resource)
+   bei System.Collections.Generic.Dictionary`2.Insert(TKey key, TValue value, Boolean add)
+   bei System.Collections.Generic.Dictionary`2.Add(TKey key, TValue value)
+   bei GCop.Utilities.DteExtensions.GetProjectFromFilePath(String filePath)
+   bei GCop.Core.Settings.VisualStudioSettingsValidator.IsContextValid(Rule rule, SyntaxTree tree, IEnumerable`1 references)
+*******************************************************
+WebException @26.12.2016 09:04:57
+Der Remotename konnte nicht aufgelöst werden: 'gcop.watch.masoud.g.e'
+*******************************************************
+WebException @26.12.2016 09:07:19
+Der Remotename konnte nicht aufgelöst werden: 'gcop.watch.masoud.g.e'
+*******************************************************
+WebException @26.12.2016 09:08:19
+Der Remotename konnte nicht aufgelöst werden: 'gcop.watch.masoud.g.e'
+*******************************************************
+WebException @26.12.2016 09:09:19
+Der Remotename konnte nicht aufgelöst werden: 'gcop.watch.masoud.g.e'
+*******************************************************
+WebException @26.12.2016 09:13:34
+Der Remotename konnte nicht aufgelöst werden: 'gcop.watch.masoud.g.e'
+*******************************************************
+ArgumentException @26.12.2016 09:16:08
+Ein Element mit dem gleichen Schlüssel wurde bereits hinzugefügt.
+System.ArgumentException: Ein Element mit dem gleichen Schlüssel wurde bereits hinzugefügt.
+   bei System.ThrowHelper.ThrowArgumentException(ExceptionResource resource)
+   bei System.Collections.Generic.Dictionary`2.Insert(TKey key, TValue value, Boolean add)
+   bei System.Collections.Generic.Dictionary`2.Add(TKey key, TValue value)
+   bei GCop.Utilities.DteExtensions.GetProjectFromFilePath(String filePath)
+   bei GCop.Core.Settings.VisualStudioSettingsValidator.IsContextValid(Rule rule, SyntaxTree tree, IEnumerable`1 references)
+*******************************************************
+WebException @26.12.2016 09:16:08
+Der Remotename konnte nicht aufgelöst werden: 'gcop.watch.masoud.g.e'
+*******************************************************
+WebException @26.12.2016 09:17:09
+Der Remotename konnte nicht aufgelöst werden: 'gcop.watch.masoud.g.e'
+*******************************************************
+WebException @26.12.2016 09:18:13
+Der Remotename konnte nicht aufgelöst werden: 'gcop.watch.masoud.g.e'
+*******************************************************
+WebException @26.12.2016 09:23:33
+Der Remotename konnte nicht aufgelöst werden: 'gcop.watch.masoud.g.e'
+*******************************************************
+WebException @26.12.2016 09:32:26
+Der Remotename konnte nicht aufgelöst werden: 'gcop.watch.masoud.g.e'
+*******************************************************
+ArgumentException @26.12.2016 09:32:53
+Ein Element mit dem gleichen Schlüssel wurde bereits hinzugefügt.
+System.ArgumentException: Ein Element mit dem gleichen Schlüssel wurde bereits hinzugefügt.
+   bei System.ThrowHelper.ThrowArgumentException(ExceptionResource resource)
+   bei System.Collections.Generic.Dictionary`2.Insert(TKey key, TValue value, Boolean add)
+   bei System.Collections.Generic.Dictionary`2.Add(TKey key, TValue value)
+   bei GCop.Utilities.DteExtensions.GetProjectFromFilePath(String filePath)
+   bei GCop.Core.Settings.VisualStudioSettingsValidator.IsContextValid(Rule rule, SyntaxTree tree, IEnumerable`1 references)
+*******************************************************
+WebException @26.12.2016 09:33:35
+Der Remotename konnte nicht aufgelöst werden: 'gcop.watch.masoud.g.e'
+*******************************************************
+WebException @26.12.2016 09:39:31
+Der Remotename konnte nicht aufgelöst werden: 'gcop.watch.masoud.g.e'
+*******************************************************
+WebException @26.12.2016 09:40:31
+Der Remotename konnte nicht aufgelöst werden: 'gcop.watch.masoud.g.e'
+*******************************************************
+WebException @26.12.2016 09:41:31
+Der Remotename konnte nicht aufgelöst werden: 'gcop.watch.masoud.g.e'
+*******************************************************
+WebException @26.12.2016 09:42:31
+Der Remotename konnte nicht aufgelöst werden: 'gcop.watch.masoud.g.e'
+*******************************************************
+WebException @26.12.2016 09:43:31
+Der Remotename konnte nicht aufgelöst werden: 'gcop.watch.masoud.g.e'
+*******************************************************
+WebException @26.12.2016 09:43:33
+Der Remotename konnte nicht aufgelöst werden: 'gcop.watch.masoud.g.e'
+*******************************************************
+WebException @26.12.2016 09:44:31
+Der Remotename konnte nicht aufgelöst werden: 'gcop.watch.masoud.g.e'
+*******************************************************
+WebException @26.12.2016 09:45:31
+Der Remotename konnte nicht aufgelöst werden: 'gcop.watch.masoud.g.e'
+*******************************************************
+WebException @26.12.2016 09:46:32
+Der Remotename konnte nicht aufgelöst werden: 'gcop.watch.masoud.g.e'
+*******************************************************
+WebException @26.12.2016 09:47:34
+Der Remotename konnte nicht aufgelöst werden: 'gcop.watch.masoud.g.e'
+*******************************************************
+WebException @26.12.2016 09:48:34
+Der Remotename konnte nicht aufgelöst werden: 'gcop.watch.masoud.g.e'
+*******************************************************
+OutOfMemoryException @26.12.2016 09:49:44
+Eine Ausnahme vom Typ "System.OutOfMemoryException" wurde ausgelöst.
+System.OutOfMemoryException: Eine Ausnahme vom Typ "System.OutOfMemoryException" wurde ausgelöst.
+   bei System.String.Concat(String str0, String str1, String str2)
+   bei System.IO.Path.InternalCombine(String path1, String path2)
+   bei System.IO.FileSystemEnumerableIterator`1.CreateSearchResult(SearchData localSearchData, WIN32_FIND_DATA findData)
+   bei System.IO.FileSystemEnumerableIterator`1.MoveNext()
+   bei System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   bei System.IO.Directory.GetFiles(String path)
+   bei GCop.Core.Settings.Settings.IsSharedProject(String filePath)
+   bei GCop.Core.Settings.VisualStudioSettingsValidator.IsContextValid(Rule rule, SyntaxTree tree, IEnumerable`1 references)
+*******************************************************
+WebException @26.12.2016 09:53:52
+Der Remotename konnte nicht aufgelöst werden: 'gcop.watch.masoud.g.e'
+*******************************************************
+WebException @26.12.2016 09:54:18
+Der Remotename konnte nicht aufgelöst werden: 'gcop.watch.masoud.g.e'
+*******************************************************
+WebException @26.12.2016 09:55:25
+Der Remotename konnte nicht aufgelöst werden: 'gcop.watch.masoud.g.e'
+*******************************************************
+WebException @26.12.2016 09:56:32
+Der Remotename konnte nicht aufgelöst werden: 'gcop.watch.masoud.g.e'
+*******************************************************
+WebException @26.12.2016 09:57:33
+Der Remotename konnte nicht aufgelöst werden: 'gcop.watch.masoud.g.e'
+*******************************************************
+WebException @26.12.2016 09:58:35
+Der Remotename konnte nicht aufgelöst werden: 'gcop.watch.masoud.g.e'
+*******************************************************
+WebException @26.12.2016 09:59:41
+Der Remotename konnte nicht aufgelöst werden: 'gcop.watch.masoud.g.e'
+*******************************************************
+WebException @26.12.2016 10:00:42
+Der Remotename konnte nicht aufgelöst werden: 'gcop.watch.masoud.g.e'
+*******************************************************
+WebException @26.12.2016 10:01:46
+Der Remotename konnte nicht aufgelöst werden: 'gcop.watch.masoud.g.e'
+*******************************************************
+WebException @26.12.2016 10:02:50
+Der Remotename konnte nicht aufgelöst werden: 'gcop.watch.masoud.g.e'
+*******************************************************
+WebException @26.12.2016 10:03:50
+Der Remotename konnte nicht aufgelöst werden: 'gcop.watch.masoud.g.e'
+*******************************************************
+WebException @26.12.2016 10:03:52
+Der Remotename konnte nicht aufgelöst werden: 'gcop.watch.masoud.g.e'
+*******************************************************
+WebException @26.12.2016 10:04:50
+Der Remotename konnte nicht aufgelöst werden: 'gcop.watch.masoud.g.e'
+*******************************************************
+WebException @26.12.2016 10:05:49
+Der Remotename konnte nicht aufgelöst werden: 'gcop.watch.masoud.g.e'
+*******************************************************
+WebException @26.12.2016 10:06:49
+Der Remotename konnte nicht aufgelöst werden: 'gcop.watch.masoud.g.e'
+*******************************************************
+WebException @26.12.2016 10:07:50
+Der Remotename konnte nicht aufgelöst werden: 'gcop.watch.masoud.g.e'
+*******************************************************
+WebException @26.12.2016 10:17:46
+Der Remotename konnte nicht aufgelöst werden: 'gcop.watch.masoud.g.e'
+*******************************************************
+WebException @26.12.2016 10:23:54
+Der Remotename konnte nicht aufgelöst werden: 'gcop.watch.masoud.g.e'
+*******************************************************
+WebException @26.12.2016 10:33:54
+Der Remotename konnte nicht aufgelöst werden: 'gcop.watch.masoud.g.e'
+*******************************************************
+WebException @26.12.2016 10:50:31
+Der Remotename konnte nicht aufgelöst werden: 'gcop.watch.masoud.g.e'
+*******************************************************
+WebException @26.12.2016 10:58:55
+Der Remotename konnte nicht aufgelöst werden: 'gcop.watch.masoud.g.e'
+*******************************************************
+WebException @26.12.2016 11:04:01
+Der Remotename konnte nicht aufgelöst werden: 'gcop.watch.masoud.g.e'
+*******************************************************
+WebException @26.12.2016 11:14:01
+Der Remotename konnte nicht aufgelöst werden: 'gcop.watch.masoud.g.e'
+*******************************************************
+WebException @26.12.2016 11:15:02
+Der Remotename konnte nicht aufgelöst werden: 'gcop.watch.masoud.g.e'
+*******************************************************
+WebException @26.12.2016 11:16:02
+Der Remotename konnte nicht aufgelöst werden: 'gcop.watch.masoud.g.e'
+*******************************************************
+WebException @26.12.2016 11:17:02
+Der Remotename konnte nicht aufgelöst werden: 'gcop.watch.masoud.g.e'
+*******************************************************
+WebException @26.12.2016 11:18:09
+Der Remotename konnte nicht aufgelöst werden: 'gcop.watch.masoud.g.e'
+*******************************************************
+WebException @26.12.2016 11:19:09
+Der Remotename konnte nicht aufgelöst werden: 'gcop.watch.masoud.g.e'
+*******************************************************
+WebException @26.12.2016 11:20:56
+Der Remotename konnte nicht aufgelöst werden: 'gcop.watch.masoud.g.e'
+*******************************************************
+WebException @26.12.2016 11:23:24
+Der Remotename konnte nicht aufgelöst werden: 'gcop.watch.masoud.g.e'
+*******************************************************
+WebException @26.12.2016 11:24:34
+Der Remotename konnte nicht aufgelöst werden: 'gcop.watch.masoud.g.e'
+*******************************************************
+WebException @26.12.2016 11:25:28
+Der Remotename konnte nicht aufgelöst werden: 'gcop.watch.masoud.g.e'
+*******************************************************
+WebException @26.12.2016 11:26:32
+Der Remotename konnte nicht aufgelöst werden: 'gcop.watch.masoud.g.e'
+*******************************************************
+WebException @26.12.2016 11:27:28
+Der Remotename konnte nicht aufgelöst werden: 'gcop.watch.masoud.g.e'
+*******************************************************
+WebException @26.12.2016 11:27:47
+Der Remotename konnte nicht aufgelöst werden: 'gcop.watch.masoud.g.e'
+*******************************************************
+WebException @26.12.2016 11:28:28
+Der Remotename konnte nicht aufgelöst werden: 'gcop.watch.masoud.g.e'
+*******************************************************
+WebException @26.12.2016 11:29:37
+Der Remotename konnte nicht aufgelöst werden: 'gcop.watch.masoud.g.e'
+*******************************************************
+WebException @26.12.2016 11:30:33
+Der Remotename konnte nicht aufgelöst werden: 'gcop.watch.masoud.g.e'
+*******************************************************
+ArgumentException @26.12.2016 11:31:31
+Ein Element mit dem gleichen Schlüssel wurde bereits hinzugefügt.
+System.ArgumentException: Ein Element mit dem gleichen Schlüssel wurde bereits hinzugefügt.
+   bei System.ThrowHelper.ThrowArgumentException(ExceptionResource resource)
+   bei System.Collections.Generic.Dictionary`2.Insert(TKey key, TValue value, Boolean add)
+   bei System.Collections.Generic.Dictionary`2.Add(TKey key, TValue value)
+   bei GCop.Utilities.DteExtensions.GetProjectFromFilePath(String filePath)
+   bei GCop.Core.Settings.VisualStudioSettingsValidator.IsContextValid(Rule rule, SyntaxTree tree, IEnumerable`1 references)
+*******************************************************
+WebException @26.12.2016 11:31:33
+Der Remotename konnte nicht aufgelöst werden: 'gcop.watch.masoud.g.e'
+*******************************************************
+WebException @26.12.2016 11:34:06
+Der Remotename konnte nicht aufgelöst werden: 'gcop.watch.masoud.g.e'
+*******************************************************
+WebException @26.12.2016 11:44:03
+Der Remotename konnte nicht aufgelöst werden: 'gcop.watch.masoud.g.e'
+*******************************************************
+WebException @26.12.2016 11:44:08
+Der Remotename konnte nicht aufgelöst werden: 'gcop.watch.masoud.g.e'
+*******************************************************
+WebException @26.12.2016 11:45:03
+Der Remotename konnte nicht aufgelöst werden: 'gcop.watch.masoud.g.e'
+*******************************************************
+WebException @26.12.2016 11:46:07
+Der Remotename konnte nicht aufgelöst werden: 'gcop.watch.masoud.g.e'
+*******************************************************
+WebException @26.12.2016 11:47:14
+Der Remotename konnte nicht aufgelöst werden: 'gcop.watch.masoud.g.e'
+*******************************************************
+WebException @26.12.2016 11:48:16
+Der Remotename konnte nicht aufgelöst werden: 'gcop.watch.masoud.g.e'
+*******************************************************
+WebException @26.12.2016 11:49:24
+Der Remotename konnte nicht aufgelöst werden: 'gcop.watch.masoud.g.e'
+*******************************************************
+WebException @26.12.2016 11:50:30
+Der Remotename konnte nicht aufgelöst werden: 'gcop.watch.masoud.g.e'
+*******************************************************
+WebException @26.12.2016 11:51:30
+Der Remotename konnte nicht aufgelöst werden: 'gcop.watch.masoud.g.e'
+*******************************************************
+WebException @26.12.2016 11:53:09
+Der Remotename konnte nicht aufgelöst werden: 'gcop.watch.masoud.g.e'
+*******************************************************
+WebException @26.12.2016 11:54:06
+Der Remotename konnte nicht aufgelöst werden: 'gcop.watch.masoud.g.e'
+*******************************************************
+WebException @26.12.2016 11:55:54
+Der Remotename konnte nicht aufgelöst werden: 'gcop.watch.masoud.g.e'
+*******************************************************
+WebException @26.12.2016 11:56:59
+Der Remotename konnte nicht aufgelöst werden: 'gcop.watch.masoud.g.e'
+*******************************************************
+WebException @26.12.2016 11:59:01
+Der Remotename konnte nicht aufgelöst werden: 'gcop.watch.masoud.g.e'
+*******************************************************
+WebException @26.12.2016 12:00:14
+Der Remotename konnte nicht aufgelöst werden: 'gcop.watch.masoud.g.e'
+*******************************************************
+WebException @26.12.2016 12:01:20
+Der Remotename konnte nicht aufgelöst werden: 'gcop.watch.masoud.g.e'
+*******************************************************
+WebException @26.12.2016 12:02:38
+Der Remotename konnte nicht aufgelöst werden: 'gcop.watch.masoud.g.e'
+*******************************************************
+WebException @26.12.2016 12:04:07
+Der Remotename konnte nicht aufgelöst werden: 'gcop.watch.masoud.g.e'
+*******************************************************
+WebException @26.12.2016 12:09:02
+Der Remotename konnte nicht aufgelöst werden: 'gcop.watch.masoud.g.e'
+*******************************************************
+WebException @26.12.2016 12:10:03
+Der Remotename konnte nicht aufgelöst werden: 'gcop.watch.masoud.g.e'
+*******************************************************
+WebException @26.12.2016 12:11:05
+Der Remotename konnte nicht aufgelöst werden: 'gcop.watch.masoud.g.e'
+*******************************************************
+WebException @26.12.2016 12:12:04
+Der Remotename konnte nicht aufgelöst werden: 'gcop.watch.masoud.g.e'
+*******************************************************
+WebException @26.12.2016 12:13:05
+Der Remotename konnte nicht aufgelöst werden: 'gcop.watch.masoud.g.e'
+*******************************************************
+WebException @26.12.2016 12:14:07
+Der Remotename konnte nicht aufgelöst werden: 'gcop.watch.masoud.g.e'
+*******************************************************
+WebException @26.12.2016 12:15:07
+Der Remotename konnte nicht aufgelöst werden: 'gcop.watch.masoud.g.e'
+*******************************************************
+WebException @26.12.2016 12:16:07
+Der Remotename konnte nicht aufgelöst werden: 'gcop.watch.masoud.g.e'
+*******************************************************
+WebException @26.12.2016 12:17:13
+Der Remotename konnte nicht aufgelöst werden: 'gcop.watch.masoud.g.e'
+*******************************************************
+ArgumentException @26.12.2016 12:18:02
+Ein Element mit dem gleichen Schlüssel wurde bereits hinzugefügt.
+System.ArgumentException: Ein Element mit dem gleichen Schlüssel wurde bereits hinzugefügt.
+   bei System.ThrowHelper.ThrowArgumentException(ExceptionResource resource)
+   bei System.Collections.Generic.Dictionary`2.Insert(TKey key, TValue value, Boolean add)
+   bei System.Collections.Generic.Dictionary`2.Add(TKey key, TValue value)
+   bei GCop.Utilities.DteExtensions.GetProjectFromFilePath(String filePath)
+   bei GCop.Core.Settings.VisualStudioSettingsValidator.IsContextValid(Rule rule, SyntaxTree tree, IEnumerable`1 references)
+*******************************************************
+WebException @26.12.2016 12:18:18
+Der Remotename konnte nicht aufgelöst werden: 'gcop.watch.masoud.g.e'
+*******************************************************
+WebException @26.12.2016 12:19:22
+Der Remotename konnte nicht aufgelöst werden: 'gcop.watch.masoud.g.e'
+*******************************************************
+WebException @26.12.2016 12:20:23
+Der Remotename konnte nicht aufgelöst werden: 'gcop.watch.masoud.g.e'
+*******************************************************
+WebException @26.12.2016 12:21:23
+Der Remotename konnte nicht aufgelöst werden: 'gcop.watch.masoud.g.e'
+*******************************************************
+WebException @26.12.2016 12:22:23
+Der Remotename konnte nicht aufgelöst werden: 'gcop.watch.masoud.g.e'
+*******************************************************
+WebException @26.12.2016 12:27:04
+Der Remotename konnte nicht aufgelöst werden: 'gcop.watch.masoud.g.e'
+*******************************************************
+WebException @26.12.2016 12:27:34
+Der Remotename konnte nicht aufgelöst werden: 'gcop.watch.masoud.g.e'
+*******************************************************
+WebException @26.12.2016 12:28:34
+Der Remotename konnte nicht aufgelöst werden: 'gcop.watch.masoud.g.e'
+*******************************************************
+WebException @26.12.2016 12:29:34
+Der Remotename konnte nicht aufgelöst werden: 'gcop.watch.masoud.g.e'
+*******************************************************
+WebException @26.12.2016 12:30:34
+Der Remotename konnte nicht aufgelöst werden: 'gcop.watch.masoud.g.e'
+*******************************************************
+WebException @26.12.2016 12:31:35
+Der Remotename konnte nicht aufgelöst werden: 'gcop.watch.masoud.g.e'
+*******************************************************
+WebException @26.12.2016 12:32:35
+Der Remotename konnte nicht aufgelöst werden: 'gcop.watch.masoud.g.e'
+*******************************************************
+WebException @26.12.2016 12:33:35
+Der Remotename konnte nicht aufgelöst werden: 'gcop.watch.masoud.g.e'
+*******************************************************
+WebException @26.12.2016 12:34:35
+Der Remotename konnte nicht aufgelöst werden: 'gcop.watch.masoud.g.e'
+*******************************************************
+WebException @26.12.2016 12:35:35
+Der Remotename konnte nicht aufgelöst werden: 'gcop.watch.masoud.g.e'
+*******************************************************
+WebException @26.12.2016 12:36:36
+Der Remotename konnte nicht aufgelöst werden: 'gcop.watch.masoud.g.e'
+*******************************************************
+WebException @26.12.2016 12:37:03
+Der Remotename konnte nicht aufgelöst werden: 'gcop.watch.masoud.g.e'
+*******************************************************
+WebException @26.12.2016 12:37:36
+Der Remotename konnte nicht aufgelöst werden: 'gcop.watch.masoud.g.e'
+*******************************************************
+WebException @26.12.2016 12:38:36
+Der Remotename konnte nicht aufgelöst werden: 'gcop.watch.masoud.g.e'
+*******************************************************
+WebException @26.12.2016 12:39:36
+Der Remotename konnte nicht aufgelöst werden: 'gcop.watch.masoud.g.e'
+*******************************************************
+WebException @26.12.2016 12:40:36
+Der Remotename konnte nicht aufgelöst werden: 'gcop.watch.masoud.g.e'
+*******************************************************
+WebException @26.12.2016 12:41:36
+Der Remotename konnte nicht aufgelöst werden: 'gcop.watch.masoud.g.e'
+*******************************************************
+ArgumentException @26.12.2016 12:41:41
+Ein Element mit dem gleichen Schlüssel wurde bereits hinzugefügt.
+System.ArgumentException: Ein Element mit dem gleichen Schlüssel wurde bereits hinzugefügt.
+   bei System.ThrowHelper.ThrowArgumentException(ExceptionResource resource)
+   bei System.Collections.Generic.Dictionary`2.Insert(TKey key, TValue value, Boolean add)
+   bei System.Collections.Generic.Dictionary`2.Add(TKey key, TValue value)
+   bei GCop.Utilities.DteExtensions.GetProjectFromFilePath(String filePath)
+   bei GCop.Core.Settings.VisualStudioSettingsValidator.IsContextValid(Rule rule, SyntaxTree tree, IEnumerable`1 references)
+*******************************************************
+WebException @26.12.2016 12:42:36
+Der Remotename konnte nicht aufgelöst werden: 'gcop.watch.masoud.g.e'
+*******************************************************
+WebException @26.12.2016 12:43:36
+Der Remotename konnte nicht aufgelöst werden: 'gcop.watch.masoud.g.e'
+*******************************************************
+WebException @26.12.2016 12:44:36
+Der Remotename konnte nicht aufgelöst werden: 'gcop.watch.masoud.g.e'
+*******************************************************
+ArgumentException @26.12.2016 12:45:21
+Ein Element mit dem gleichen Schlüssel wurde bereits hinzugefügt.
+System.ArgumentException: Ein Element mit dem gleichen Schlüssel wurde bereits hinzugefügt.
+   bei System.ThrowHelper.ThrowArgumentException(ExceptionResource resource)
+   bei System.Collections.Generic.Dictionary`2.Insert(TKey key, TValue value, Boolean add)
+   bei System.Collections.Generic.Dictionary`2.Add(TKey key, TValue value)
+   bei GCop.Utilities.DteExtensions.GetProjectFromFilePath(String filePath)
+   bei GCop.Core.Settings.VisualStudioSettingsValidator.IsContextValid(Rule rule, SyntaxTree tree, IEnumerable`1 references)
+*******************************************************
+WebException @26.12.2016 12:45:36
+Der Remotename konnte nicht aufgelöst werden: 'gcop.watch.masoud.g.e'
+*******************************************************
+WebException @26.12.2016 12:46:36
+Der Remotename konnte nicht aufgelöst werden: 'gcop.watch.masoud.g.e'
+*******************************************************
+WebException @26.12.2016 12:47:03
+Der Remotename konnte nicht aufgelöst werden: 'gcop.watch.masoud.g.e'
+*******************************************************
+WebException @26.12.2016 12:47:37
+Der Remotename konnte nicht aufgelöst werden: 'gcop.watch.masoud.g.e'
+*******************************************************
+ArgumentException @26.12.2016 12:48:22
+Ein Element mit dem gleichen Schlüssel wurde bereits hinzugefügt.
+System.ArgumentException: Ein Element mit dem gleichen Schlüssel wurde bereits hinzugefügt.
+   bei System.ThrowHelper.ThrowArgumentException(ExceptionResource resource)
+   bei System.Collections.Generic.Dictionary`2.Insert(TKey key, TValue value, Boolean add)
+   bei System.Collections.Generic.Dictionary`2.Add(TKey key, TValue value)
+   bei GCop.Utilities.DteExtensions.GetProjectFromFilePath(String filePath)
+   bei GCop.Core.Settings.VisualStudioSettingsValidator.IsContextValid(Rule rule, SyntaxTree tree, IEnumerable`1 references)
+*******************************************************
+WebException @26.12.2016 12:48:36
+Der Remotename konnte nicht aufgelöst werden: 'gcop.watch.masoud.g.e'
+*******************************************************
+WebException @26.12.2016 12:49:43
+Der Remotename konnte nicht aufgelöst werden: 'gcop.watch.masoud.g.e'
+*******************************************************
+WebException @26.12.2016 12:50:43
+Der Remotename konnte nicht aufgelöst werden: 'gcop.watch.masoud.g.e'
+*******************************************************
+ArgumentException @26.12.2016 12:51:36
+Ein Element mit dem gleichen Schlüssel wurde bereits hinzugefügt.
+System.ArgumentException: Ein Element mit dem gleichen Schlüssel wurde bereits hinzugefügt.
+   bei System.ThrowHelper.ThrowArgumentException(ExceptionResource resource)
+   bei System.Collections.Generic.Dictionary`2.Insert(TKey key, TValue value, Boolean add)
+   bei System.Collections.Generic.Dictionary`2.Add(TKey key, TValue value)
+   bei GCop.Utilities.DteExtensions.GetProjectFromFilePath(String filePath)
+   bei GCop.Core.Settings.VisualStudioSettingsValidator.IsContextValid(Rule rule, SyntaxTree tree, IEnumerable`1 references)
+*******************************************************
+WebException @26.12.2016 12:51:43
+Der Remotename konnte nicht aufgelöst werden: 'gcop.watch.masoud.g.e'
+*******************************************************
+WebException @26.12.2016 12:52:44
+Der Remotename konnte nicht aufgelöst werden: 'gcop.watch.masoud.g.e'
+*******************************************************
+ArgumentException @26.12.2016 12:53:33
+Ein Element mit dem gleichen Schlüssel wurde bereits hinzugefügt.
+System.ArgumentException: Ein Element mit dem gleichen Schlüssel wurde bereits hinzugefügt.
+   bei System.ThrowHelper.ThrowArgumentException(ExceptionResource resource)
+   bei System.Collections.Generic.Dictionary`2.Insert(TKey key, TValue value, Boolean add)
+   bei System.Collections.Generic.Dictionary`2.Add(TKey key, TValue value)
+   bei GCop.Utilities.DteExtensions.GetProjectFromFilePath(String filePath)
+   bei GCop.Core.Settings.VisualStudioSettingsValidator.IsContextValid(Rule rule, SyntaxTree tree, IEnumerable`1 references)
+*******************************************************
+WebException @26.12.2016 12:53:44
+Der Remotename konnte nicht aufgelöst werden: 'gcop.watch.masoud.g.e'
+*******************************************************
+WebException @26.12.2016 12:54:44
+Der Remotename konnte nicht aufgelöst werden: 'gcop.watch.masoud.g.e'
+*******************************************************
+WebException @26.12.2016 12:55:44
+Der Remotename konnte nicht aufgelöst werden: 'gcop.watch.masoud.g.e'
+*******************************************************
+WebException @26.12.2016 12:56:49
+Der Remotename konnte nicht aufgelöst werden: 'gcop.watch.masoud.g.e'
+*******************************************************
+WebException @26.12.2016 12:57:05
+Der Remotename konnte nicht aufgelöst werden: 'gcop.watch.masoud.g.e'
+*******************************************************
+WebException @26.12.2016 12:57:49
+Der Remotename konnte nicht aufgelöst werden: 'gcop.watch.masoud.g.e'
+*******************************************************
+WebException @26.12.2016 12:58:49
+Der Remotename konnte nicht aufgelöst werden: 'gcop.watch.masoud.g.e'
+*******************************************************
+WebException @26.12.2016 12:59:49
+Der Remotename konnte nicht aufgelöst werden: 'gcop.watch.masoud.g.e'
+*******************************************************
+WebException @26.12.2016 13:00:49
+Der Remotename konnte nicht aufgelöst werden: 'gcop.watch.masoud.g.e'
+*******************************************************
+WebException @26.12.2016 13:01:50
+Der Remotename konnte nicht aufgelöst werden: 'gcop.watch.masoud.g.e'
+*******************************************************
+WebException @26.12.2016 13:02:50
+Der Remotename konnte nicht aufgelöst werden: 'gcop.watch.masoud.g.e'
+*******************************************************
+WebException @26.12.2016 13:03:50
+Der Remotename konnte nicht aufgelöst werden: 'gcop.watch.masoud.g.e'
+*******************************************************
+WebException @26.12.2016 13:04:50
+Der Remotename konnte nicht aufgelöst werden: 'gcop.watch.masoud.g.e'
+*******************************************************
+WebException @26.12.2016 13:05:50
+Der Remotename konnte nicht aufgelöst werden: 'gcop.watch.masoud.g.e'
+*******************************************************
+WebException @26.12.2016 13:06:50
+Der Remotename konnte nicht aufgelöst werden: 'gcop.watch.masoud.g.e'
+*******************************************************
+WebException @26.12.2016 13:07:03
+Der Remotename konnte nicht aufgelöst werden: 'gcop.watch.masoud.g.e'
+*******************************************************
+WebException @26.12.2016 13:07:50
+Der Remotename konnte nicht aufgelöst werden: 'gcop.watch.masoud.g.e'
+*******************************************************
+WebException @26.12.2016 13:08:50
+Der Remotename konnte nicht aufgelöst werden: 'gcop.watch.masoud.g.e'
+*******************************************************
+WebException @26.12.2016 13:09:51
+Der Remotename konnte nicht aufgelöst werden: 'gcop.watch.masoud.g.e'
+*******************************************************
+WebException @26.12.2016 13:10:53
+Der Remotename konnte nicht aufgelöst werden: 'gcop.watch.masoud.g.e'
+*******************************************************
+WebException @26.12.2016 13:11:54
+Der Remotename konnte nicht aufgelöst werden: 'gcop.watch.masoud.g.e'
+*******************************************************
+WebException @26.12.2016 13:12:53
+Der Remotename konnte nicht aufgelöst werden: 'gcop.watch.masoud.g.e'
+*******************************************************
+WebException @26.12.2016 13:13:53
+Der Remotename konnte nicht aufgelöst werden: 'gcop.watch.masoud.g.e'
+*******************************************************
+WebException @26.12.2016 13:14:53
+Der Remotename konnte nicht aufgelöst werden: 'gcop.watch.masoud.g.e'
+*******************************************************
+WebException @26.12.2016 13:15:53
+Der Remotename konnte nicht aufgelöst werden: 'gcop.watch.masoud.g.e'
+*******************************************************
+WebException @26.12.2016 13:16:53
+Der Remotename konnte nicht aufgelöst werden: 'gcop.watch.masoud.g.e'
+*******************************************************
+WebException @26.12.2016 13:17:03
+Der Remotename konnte nicht aufgelöst werden: 'gcop.watch.masoud.g.e'
+*******************************************************
+WebException @26.12.2016 13:17:53
+Der Remotename konnte nicht aufgelöst werden: 'gcop.watch.masoud.g.e'
+*******************************************************
+WebException @26.12.2016 13:18:54
+Der Remotename konnte nicht aufgelöst werden: 'gcop.watch.masoud.g.e'
+*******************************************************
+WebException @26.12.2016 13:20:13
+Der Remotename konnte nicht aufgelöst werden: 'gcop.watch.masoud.g.e'
+*******************************************************
+WebException @26.12.2016 13:23:37
+Der Remotename konnte nicht aufgelöst werden: 'gcop.watch.masoud.g.e'
+*******************************************************
+WebException @26.12.2016 13:24:39
+Der Remotename konnte nicht aufgelöst werden: 'gcop.watch.masoud.g.e'
+*******************************************************
+WebException @26.12.2016 13:25:39
+Der Remotename konnte nicht aufgelöst werden: 'gcop.watch.masoud.g.e'
+*******************************************************
+WebException @26.12.2016 13:27:03
+Der Remotename konnte nicht aufgelöst werden: 'gcop.watch.masoud.g.e'
+*******************************************************
+WebException @26.12.2016 13:27:14
+Der Remotename konnte nicht aufgelöst werden: 'gcop.watch.masoud.g.e'
+*******************************************************
+WebException @26.12.2016 13:28:19
+Der Remotename konnte nicht aufgelöst werden: 'gcop.watch.masoud.g.e'
+*******************************************************
+WebException @26.12.2016 13:29:43
+Der Remotename konnte nicht aufgelöst werden: 'gcop.watch.masoud.g.e'
+*******************************************************
+WebException @26.12.2016 13:37:03
+Der Remotename konnte nicht aufgelöst werden: 'gcop.watch.masoud.g.e'
+*******************************************************
+WebException @26.12.2016 13:40:20
+Der Remotename konnte nicht aufgelöst werden: 'gcop.watch.masoud.g.e'
+*******************************************************
+WebException @26.12.2016 13:41:20
+Der Remotename konnte nicht aufgelöst werden: 'gcop.watch.masoud.g.e'
+*******************************************************
+WebException @26.12.2016 13:42:21
+Der Remotename konnte nicht aufgelöst werden: 'gcop.watch.masoud.g.e'
+*******************************************************
+WebException @26.12.2016 13:43:21
+Der Remotename konnte nicht aufgelöst werden: 'gcop.watch.masoud.g.e'
+*******************************************************
+WebException @26.12.2016 13:44:25
+Der Remotename konnte nicht aufgelöst werden: 'gcop.watch.masoud.g.e'
+*******************************************************
+WebException @26.12.2016 13:45:24
+Der Remotename konnte nicht aufgelöst werden: 'gcop.watch.masoud.g.e'
+*******************************************************
+WebException @26.12.2016 13:46:24
+Der Remotename konnte nicht aufgelöst werden: 'gcop.watch.masoud.g.e'
+*******************************************************
+WebException @26.12.2016 13:47:03
+Der Remotename konnte nicht aufgelöst werden: 'gcop.watch.masoud.g.e'
+*******************************************************
+WebException @26.12.2016 13:47:25
+Der Remotename konnte nicht aufgelöst werden: 'gcop.watch.masoud.g.e'
+*******************************************************
+WebException @26.12.2016 13:48:26
+Der Remotename konnte nicht aufgelöst werden: 'gcop.watch.masoud.g.e'
+*******************************************************
+WebException @26.12.2016 13:50:33
+Der Remotename konnte nicht aufgelöst werden: 'gcop.watch.masoud.g.e'
+*******************************************************
+WebException @26.12.2016 13:51:33
+Der Remotename konnte nicht aufgelöst werden: 'gcop.watch.masoud.g.e'
+*******************************************************
+WebException @26.12.2016 13:52:33
+Der Remotename konnte nicht aufgelöst werden: 'gcop.watch.masoud.g.e'
+*******************************************************
+WebException @26.12.2016 13:53:33
+Der Remotename konnte nicht aufgelöst werden: 'gcop.watch.masoud.g.e'
+*******************************************************
+WebException @26.12.2016 13:54:33
+Der Remotename konnte nicht aufgelöst werden: 'gcop.watch.masoud.g.e'
+*******************************************************
+ArgumentException @26.12.2016 13:55:14
+Ein Element mit dem gleichen Schlüssel wurde bereits hinzugefügt.
+System.ArgumentException: Ein Element mit dem gleichen Schlüssel wurde bereits hinzugefügt.
+   bei System.ThrowHelper.ThrowArgumentException(ExceptionResource resource)
+   bei System.Collections.Generic.Dictionary`2.Insert(TKey key, TValue value, Boolean add)
+   bei System.Collections.Generic.Dictionary`2.Add(TKey key, TValue value)
+   bei GCop.Utilities.DteExtensions.GetProjectFromFilePath(String filePath)
+   bei GCop.Core.Settings.VisualStudioSettingsValidator.IsContextValid(Rule rule, SyntaxTree tree, IEnumerable`1 references)
+*******************************************************
+WebException @26.12.2016 13:55:37
+Der Remotename konnte nicht aufgelöst werden: 'gcop.watch.masoud.g.e'
+*******************************************************
+WebException @26.12.2016 13:56:37
+Der Remotename konnte nicht aufgelöst werden: 'gcop.watch.masoud.g.e'
+*******************************************************
+WebException @26.12.2016 13:57:03
+Der Remotename konnte nicht aufgelöst werden: 'gcop.watch.masoud.g.e'
+*******************************************************
+WebException @26.12.2016 13:57:37
+Der Remotename konnte nicht aufgelöst werden: 'gcop.watch.masoud.g.e'
+*******************************************************
+ArgumentException @26.12.2016 13:57:55
+Ein Element mit dem gleichen Schlüssel wurde bereits hinzugefügt.
+System.ArgumentException: Ein Element mit dem gleichen Schlüssel wurde bereits hinzugefügt.
+   bei System.ThrowHelper.ThrowArgumentException(ExceptionResource resource)
+   bei System.Collections.Generic.Dictionary`2.Insert(TKey key, TValue value, Boolean add)
+   bei System.Collections.Generic.Dictionary`2.Add(TKey key, TValue value)
+   bei GCop.Utilities.DteExtensions.GetProjectFromFilePath(String filePath)
+   bei GCop.Core.Settings.VisualStudioSettingsValidator.IsContextValid(Rule rule, SyntaxTree tree, IEnumerable`1 references)
+*******************************************************
+WebException @26.12.2016 13:58:37
+Der Remotename konnte nicht aufgelöst werden: 'gcop.watch.masoud.g.e'
+*******************************************************
+WebException @26.12.2016 14:01:55
+Der Remotename konnte nicht aufgelöst werden: 'gcop.watch.masoud.g.e'
+*******************************************************
+WebException @26.12.2016 14:02:55
+Der Remotename konnte nicht aufgelöst werden: 'gcop.watch.masoud.g.e'
+*******************************************************
+WebException @26.12.2016 14:04:06
+Der Remotename konnte nicht aufgelöst werden: 'gcop.watch.masoud.g.e'
+*******************************************************
+WebException @26.12.2016 14:05:07
+Der Remotename konnte nicht aufgelöst werden: 'gcop.watch.masoud.g.e'
+*******************************************************
+WebException @26.12.2016 14:06:08
+Der Remotename konnte nicht aufgelöst werden: 'gcop.watch.masoud.g.e'
+*******************************************************
+WebException @26.12.2016 14:07:03
+Der Remotename konnte nicht aufgelöst werden: 'gcop.watch.masoud.g.e'
+*******************************************************
+WebException @26.12.2016 14:07:07
+Der Remotename konnte nicht aufgelöst werden: 'gcop.watch.masoud.g.e'
+*******************************************************

@@ -1,14 +1,28 @@
-﻿//  Copyright 2015 Stefan Negritoiu (FreeBusy). See LICENSE file for more information.
-
-using System;
-using System.Collections.Generic;
-
-namespace AlexaSkillsKit.UI
-{
-    public class LinkAccountCard : Card
+﻿// --------------------------------------------------------------------------------------------------------------------
+// <copyright company="" file="LinkAccountCard.cs">
+//   
+// </copyright>
+// <summary>
+//   The link account card.
+// </summary>
+// 
+// --------------------------------------------------------------------------------------------------------------------
+namespace AlexaSkillsKit .UI
     {
-        public override string Type {
-            get { return "LinkAccount"; }
-        }
+        /// <summary>
+        ///     The link account card.
+        /// </summary>
+        public class LinkAccountCard : Card
+            {
+                /// <summary>
+                ///     Gets the type.
+                /// </summary>
+                public override string Type
+                    {
+                        get
+                            {
+                                return "LinkAccount" ;
+                            }
+                    }
+            }
     }
-}

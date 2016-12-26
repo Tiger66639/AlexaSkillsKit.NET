@@ -1,14 +1,32 @@
-﻿//  Copyright 2015 Stefan Negritoiu (FreeBusy). See LICENSE file for more information.
-
-using System;
-using System.Collections.Generic;
-
-namespace AlexaSkillsKit.Speechlet
-{
-    public class SessionStartedRequest : SpeechletRequest
+﻿// --------------------------------------------------------------------------------------------------------------------
+// <copyright company="" file="SessionStartedRequest.cs">
+//   
+// </copyright>
+// <summary>
+//   The session started request.
+// </summary>
+// 
+// --------------------------------------------------------------------------------------------------------------------
+namespace AlexaSkillsKit .Speechlet
     {
-        public SessionStartedRequest(string requestId, DateTime timestamp) 
-            : base(requestId, timestamp) {
-        }
+        /// <summary>
+        ///     The session started request.
+        /// </summary>
+        public class SessionStartedRequest : SpeechletRequest
+            {
+                /// <summary>
+                /// Initializes a new instance of the <see cref="SessionStartedRequest"/> class. 
+                /// Initializes a new instance of the
+                ///     <see cref="SessionStartedRequest"/> class.
+                /// </summary>
+                /// <param name="requestId">
+                /// The request id.
+                /// </param>
+                /// <param name="timestamp">
+                /// The timestamp.
+                /// </param>
+                public SessionStartedRequest( string requestId, System . DateTime timestamp )
+                    : base(requestId, timestamp)
+                    {}
+            }
     }
-}

@@ -1,32 +1,43 @@
-﻿//  Copyright 2015 Stefan Negritoiu (FreeBusy). See LICENSE file for more information.
-
-using System;
-using Newtonsoft.Json.Linq;
-
-namespace AlexaSkillsKit.Speechlet
-{
-    public class User
+﻿// --------------------------------------------------------------------------------------------------------------------
+// <copyright company="" file="User.cs">
+//   
+// </copyright>
+// <summary>
+//   The user.
+// </summary>
+// 
+// --------------------------------------------------------------------------------------------------------------------
+namespace AlexaSkillsKit .Speechlet
     {
         /// <summary>
-        /// 
+        ///     The user.
         /// </summary>
-        /// <param name="json"></param>
-        /// <returns></returns>
-        public static User FromJson(JObject json) {
-            return new User {
-                Id = json.Value<string>("userId"),
-                AccessToken = json.Value<string>("accessToken")
-            };
-        }
+        public class User
+            {
+                /// <summary>
+                ///     Gets or sets the access token.
+                /// </summary>
+                public virtual string AccessToken { get ; set ; }
 
-        public virtual string Id {
-            get;
-            set;
-        }
+                /// <summary>
+                ///     Gets or sets the id.
+                /// </summary>
+                public virtual string Id { get ; set ; }
 
-        public virtual string AccessToken {
-            get;
-            set;
-        }
+                /// <summary>
+                /// </summary>
+                /// <param name="json">
+                /// </param>
+                /// <returns>
+                /// The <see cref="User"/> .
+                /// </returns>
+                public static User FromJson( Newtonsoft . Json . Linq . JObject json )
+                    {
+                        return new User
+                                   {
+                                       Id = json . Value<string>("userId"),
+                                       AccessToken = json . Value<string>("accessToken")
+                                   } ;
+                    }
+            }
     }
-}

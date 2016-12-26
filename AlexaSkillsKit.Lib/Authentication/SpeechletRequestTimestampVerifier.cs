@@ -1,21 +1,41 @@
-﻿//  Copyright 2015 Stefan Negritoiu (FreeBusy). See LICENSE file for more information.
-
-using System;
-using System.Diagnostics;
-using AlexaSkillsKit.Json;
-
-namespace AlexaSkillsKit.Authentication
-{
-    public class SpeechletRequestTimestampVerifier
+﻿// --------------------------------------------------------------------------------------------------------------------
+// <copyright company="" file="SpeechletRequestTimestampVerifier.cs">
+//   
+// </copyright>
+// <summary>
+//   The speechlet request timestamp verifier.
+// </summary>
+// 
+// --------------------------------------------------------------------------------------------------------------------
+namespace AlexaSkillsKit .Authentication
     {
         /// <summary>
-        /// Verifies request timestamp
+        ///     The speechlet request timestamp verifier.
         /// </summary>
-        public static bool VerifyRequestTimestamp(SpeechletRequestEnvelope requestEnvelope, DateTime referenceTimeUtc) {
-            // verify timestamp is within tolerance
-            var diff = referenceTimeUtc - requestEnvelope.Request.Timestamp;
-            Debug.WriteLine("Request was timestamped {0:0.00} seconds ago.", diff.TotalSeconds);
-            return (Math.Abs((decimal)diff.TotalSeconds) <= Sdk.TIMESTAMP_TOLERANCE_SEC);
-        }
+        public class SpeechletRequestTimestampVerifier
+            {
+                /// <summary>
+                /// Verifies request timestamp
+                /// </summary>
+                /// <param name="requestEnvelope">
+                /// The request Envelope.
+                /// </param>
+                /// <param name="referenceTimeUtc">
+                /// The reference Time Utc.
+                /// </param>
+                /// <returns>
+                /// The <see cref="System.Boolean"/> .
+                /// </returns>
+                public static bool VerifyRequestTimestamp(
+                    Json . SpeechletRequestEnvelope requestEnvelope,
+                    System . DateTime referenceTimeUtc )
+                    {
+                        // verify timestamp is within tolerance
+                        var diff = referenceTimeUtc - requestEnvelope . Request . Timestamp ;
+                        System . Diagnostics . Debug . WriteLine(
+                            "Request was timestamped {0:0.00} seconds ago.",
+                            diff . TotalSeconds) ;
+                        return System . Math . Abs((decimal) diff . TotalSeconds) <= Sdk . TIMESTAMP_TOLERANCE_SEC ;
+                    }
+            }
     }
-}

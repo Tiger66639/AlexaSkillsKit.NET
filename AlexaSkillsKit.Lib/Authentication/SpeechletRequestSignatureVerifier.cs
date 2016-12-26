@@ -1,201 +1,290 @@
-﻿//  Copyright 2015 Stefan Negritoiu (FreeBusy). See LICENSE file for more information.
-
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Net;
-using System.Net.Http;
-using System.Runtime.Caching;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Threading.Tasks;
-using Org.BouncyCastle.X509;
-using Org.BouncyCastle.Security.Certificates;
-
-namespace AlexaSkillsKit.Authentication
-{
-    public class SpeechletRequestSignatureVerifier
+﻿// --------------------------------------------------------------------------------------------------------------------
+// <copyright company="" file="SpeechletRequestSignatureVerifier.cs">
+//   
+// </copyright>
+// <summary>
+//   The speechlet request signature verifier.
+// </summary>
+// 
+// --------------------------------------------------------------------------------------------------------------------
+namespace AlexaSkillsKit .Authentication
     {
-        private static Func<string, string> _getCertCacheKey = (string url) => string.Format("{0}_{1}", Sdk.SIGNATURE_CERT_URL_REQUEST_HEADER, url);
-
-        private static CacheItemPolicy _policy = new CacheItemPolicy {
-            Priority = CacheItemPriority.Default,
-            AbsoluteExpiration = DateTimeOffset.UtcNow.AddHours(24)
-        };
-
-
         /// <summary>
-        /// Verifying the Signature Certificate URL per requirements documented at
-        /// https://developer.amazon.com/public/solutions/alexa/alexa-skills-kit/docs/developing-an-alexa-skill-as-a-web-service
+        ///     The speechlet request signature verifier.
         /// </summary>
-        public static bool VerifyCertificateUrl(string certChainUrl) {
-            if (String.IsNullOrEmpty(certChainUrl)) {
-                return false;
-            }
+        public class SpeechletRequestSignatureVerifier
+            {
+                /// <summary>
+                ///     The _get cert cache key.
+                /// </summary>
+                private static System . Func<string, string> _getCertCacheKey =
+                    ( string url ) => string . Format("{0}_{1}", Sdk . SIGNATURE_CERT_URL_REQUEST_HEADER, url) ;
 
-            Uri certChainUri;
-            if (!Uri.TryCreate(certChainUrl, UriKind.Absolute, out certChainUri)) {
-                return false;
-            }
+                /// <summary>
+                ///     The _policy.
+                /// </summary>
+                private static System . Runtime . Caching . CacheItemPolicy _policy =
+                    new System . Runtime . Caching . CacheItemPolicy
+                        {
+                            Priority = System . Runtime . Caching . CacheItemPriority . Default,
+                            AbsoluteExpiration = System . DateTimeOffset . UtcNow . AddHours(24)
+                        } ;
 
-            return
-                certChainUri.Host.Equals(Sdk.SIGNATURE_CERT_URL_HOST, StringComparison.OrdinalIgnoreCase) &&
-                certChainUri.PathAndQuery.StartsWith(Sdk.SIGNATURE_CERT_URL_PATH) &&
-                certChainUri.Scheme == Uri.UriSchemeHttps &&
-                certChainUri.Port == 443;
-        }
+                /// <summary>
+                /// </summary>
+                /// <param name="serializedSpeechletRequest">
+                /// The serialized Speechlet Request.
+                /// </param>
+                /// <param name="expectedSignature">
+                /// The expected Signature.
+                /// </param>
+                /// <param name="cert">
+                /// The cert.
+                /// </param>
+                /// <returns>
+                /// The <see cref="System.Boolean"/> .
+                /// </returns>
+                public static bool CheckRequestSignature(
+                    byte[] serializedSpeechletRequest,
+                    string expectedSignature,
+                    Org . BouncyCastle . X509 . X509Certificate cert )
+                    {
+                        byte[] expectedSig = null ;
+                        try
+                        {
+                            expectedSig = System . Convert . FromBase64String(expectedSignature) ;
+                        }
+                        catch (System . FormatException)
+                        {
+                            return false ;
+                        }
 
+                        var publicKey =
+                            (Org . BouncyCastle . Crypto . Parameters . RsaKeyParameters) cert . GetPublicKey() ;
+                        var signer =
+                            Org . BouncyCastle . Security . SignerUtilities . GetSigner(Sdk . SIGNATURE_ALGORITHM) ;
+                        signer . Init(false, publicKey) ;
+                        signer . BlockUpdate(serializedSpeechletRequest, 0, serializedSpeechletRequest . Length) ;
 
-        /// <summary>
-        /// Verifies request signature and manages the caching of the signature certificate
-        /// </summary>
-        public static bool VerifyRequestSignature(
-            byte[] serializedSpeechletRequest, string expectedSignature, string certChainUrl) {
-
-            string certCacheKey = _getCertCacheKey(certChainUrl);
-            X509Certificate cert = MemoryCache.Default.Get(certCacheKey) as X509Certificate;
-            if (cert == null ||
-                !CheckRequestSignature(serializedSpeechletRequest, expectedSignature, cert)) {
-
-                // download the cert 
-                // if we don't have it in cache or
-                // if we have it but it's stale because the current request was signed with a newer cert
-                // (signaled by signature check fail with cached cert)
-                cert = RetrieveAndVerifyCertificate(certChainUrl);
-                if (cert == null) return false;
-
-                MemoryCache.Default.Set(certCacheKey, cert, _policy);
-            }
-
-            return CheckRequestSignature(serializedSpeechletRequest, expectedSignature, cert);
-        }
-
-
-        /// <summary>
-        /// Verifies request signature and manages the caching of the signature certificate
-        /// </summary>
-        public async static Task<bool> VerifyRequestSignatureAsync(
-            byte[] serializedSpeechletRequest, string expectedSignature, string certChainUrl) {
-
-            string certCacheKey = _getCertCacheKey(certChainUrl);
-            X509Certificate cert = MemoryCache.Default.Get(certCacheKey) as X509Certificate;
-            if (cert == null ||
-                !CheckRequestSignature(serializedSpeechletRequest, expectedSignature, cert)) {
-
-                // download the cert 
-                // if we don't have it in cache or 
-                // if we have it but it's stale because the current request was signed with a newer cert
-                // (signaled by signature check fail with cached cert)
-                cert = await RetrieveAndVerifyCertificateAsync(certChainUrl);
-                if (cert == null) return false;
-
-                MemoryCache.Default.Set(certCacheKey, cert, _policy);
-            }
-
-            return CheckRequestSignature(serializedSpeechletRequest, expectedSignature, cert);
-        }
-
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static X509Certificate RetrieveAndVerifyCertificate(string certChainUrl) {
-            // making requests to externally-supplied URLs is an open invitation to DoS
-            // so restrict host to an Alexa controlled subdomain/path
-            if (!VerifyCertificateUrl(certChainUrl)) return null;
-
-            var webClient = new WebClient();
-            var content = webClient.DownloadString(certChainUrl);
-
-            var pemReader = new Org.BouncyCastle.OpenSsl.PemReader(new StringReader(content));
-            var cert = (X509Certificate)pemReader.ReadObject();
-            try {
-                cert.CheckValidity();
-                if (!CheckCertSubjectNames(cert)) return null;
-            }
-            catch (CertificateExpiredException) {
-                return null;
-            }
-            catch (CertificateNotYetValidException) {
-                return null;
-            }
-
-            return cert;
-        }
-
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public async static Task<X509Certificate> RetrieveAndVerifyCertificateAsync(string certChainUrl) {
-            // making requests to externally-supplied URLs is an open invitation to DoS
-            // so restrict host to an Alexa controlled subdomain/path
-            if (!VerifyCertificateUrl(certChainUrl)) return null;
-
-            var httpClient = new HttpClient();
-            var httpResponse = await httpClient.GetAsync(certChainUrl);
-            var content = await httpResponse.Content.ReadAsStringAsync();
-            if (String.IsNullOrEmpty(content)) return null;
-
-            var pemReader = new Org.BouncyCastle.OpenSsl.PemReader(new StringReader(content));
-            var cert = (X509Certificate)pemReader.ReadObject();
-            try {
-                cert.CheckValidity(); 
-                if (!CheckCertSubjectNames(cert)) return null;
-            }
-            catch (CertificateExpiredException) {
-                return null;
-            }
-            catch (CertificateNotYetValidException) {
-                return null;
-            }
-
-            return cert;
-        }
-
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static bool CheckRequestSignature(
-            byte[] serializedSpeechletRequest, string expectedSignature, Org.BouncyCastle.X509.X509Certificate cert) {
-
-            byte[] expectedSig = null;
-            try {
-                expectedSig = Convert.FromBase64String(expectedSignature);
-            }
-            catch (FormatException) {
-                return false;
-            }
-
-            var publicKey = (Org.BouncyCastle.Crypto.Parameters.RsaKeyParameters)cert.GetPublicKey();
-            var signer = Org.BouncyCastle.Security.SignerUtilities.GetSigner(Sdk.SIGNATURE_ALGORITHM);
-            signer.Init(false, publicKey);
-            signer.BlockUpdate(serializedSpeechletRequest, 0, serializedSpeechletRequest.Length);            
-
-            return signer.VerifySignature(expectedSig);
-        }
-
-
-        /// <summary>
-        /// 
-        /// </summary>
-        private static bool CheckCertSubjectNames(X509Certificate cert) {
-            bool found = false;
-            ArrayList subjectNamesList = (ArrayList)cert.GetSubjectAlternativeNames();
-            for (int i=0; i < subjectNamesList.Count; i++) {
-                ArrayList subjectNames = (ArrayList)subjectNamesList[i];
-                for (int j = 0; j < subjectNames.Count; j++) {
-                    if (subjectNames[j] is String && subjectNames[j].Equals(Sdk.ECHO_API_DOMAIN_NAME)) {
-                        found = true;
-                        break;
+                        return signer . VerifySignature(expectedSig) ;
                     }
-                }
-            }
 
-            return found;
-        }
+                /// <summary>
+                /// </summary>
+                /// <param name="certChainUrl">
+                /// The cert Chain Url.
+                /// </param>
+                /// <returns>
+                /// The <see cref="X509Certificate"/> .
+                /// </returns>
+                public static Org . BouncyCastle . X509 . X509Certificate RetrieveAndVerifyCertificate(
+                    string certChainUrl )
+                    {
+                        // making requests to externally-supplied URLs is an open invitation to DoS
+                        // so restrict host to an Alexa controlled subdomain/path
+                        if (! VerifyCertificateUrl(certChainUrl)) return null ;
+
+                        var webClient = new System . Net . WebClient() ;
+                        var content = webClient . DownloadString(certChainUrl) ;
+
+                        var pemReader =
+                            new Org . BouncyCastle . OpenSsl . PemReader(new System . IO . StringReader(content)) ;
+                        var cert = (Org . BouncyCastle . X509 . X509Certificate) pemReader . ReadObject() ;
+                        try
+                        {
+                            cert . CheckValidity() ;
+                            if (! CheckCertSubjectNames(cert)) return null ;
+                        }
+                        catch (Org . BouncyCastle . Security . Certificates . CertificateExpiredException)
+                        {
+                            return null ;
+                        }
+                        catch (Org . BouncyCastle . Security . Certificates . CertificateNotYetValidException)
+                        {
+                            return null ;
+                        }
+
+                        return cert ;
+                    }
+
+                /// <summary>
+                /// </summary>
+                /// <param name="certChainUrl">
+                /// The cert Chain Url.
+                /// </param>
+                /// <returns>
+                /// The <see cref="Task"/> .
+                /// </returns>
+                public static async System . Threading . Tasks . Task<Org . BouncyCastle . X509 . X509Certificate> RetrieveAndVerifyCertificateAsync( string certChainUrl )
+                    {
+                        // making requests to externally-supplied URLs is an open invitation to DoS
+                        // so restrict host to an Alexa controlled subdomain/path
+                        if (! VerifyCertificateUrl(certChainUrl)) return null ;
+
+                        var httpClient = new System . Net . Http . HttpClient() ;
+                        var httpResponse = await httpClient . GetAsync(certChainUrl) ;
+                        var content = await httpResponse . Content . ReadAsStringAsync() ;
+                        if (string . IsNullOrEmpty(content)) return null ;
+
+                        var pemReader =
+                            new Org . BouncyCastle . OpenSsl . PemReader(new System . IO . StringReader(content)) ;
+                        var cert = (Org . BouncyCastle . X509 . X509Certificate) pemReader . ReadObject() ;
+                        try
+                        {
+                            cert . CheckValidity() ;
+                            if (! CheckCertSubjectNames(cert)) return null ;
+                        }
+                        catch (Org . BouncyCastle . Security . Certificates . CertificateExpiredException)
+                        {
+                            return null ;
+                        }
+                        catch (Org . BouncyCastle . Security . Certificates . CertificateNotYetValidException)
+                        {
+                            return null ;
+                        }
+
+                        return cert ;
+                    }
+
+                /// <summary>
+                /// Verifying the Signature Certificate URL per requirements documented
+                ///     at
+                ///     https://developer.amazon.com/public/solutions/alexa/alexa-skills-kit/docs/developing-an-alexa-skill-as-a-web-service
+                /// </summary>
+                /// <param name="certChainUrl">
+                /// The cert Chain Url.
+                /// </param>
+                /// <returns>
+                /// The <see cref="System.Boolean"/> .
+                /// </returns>
+                public static bool VerifyCertificateUrl( string certChainUrl )
+                    {
+                        if (string . IsNullOrEmpty(certChainUrl))
+                        {
+                            return false ;
+                        }
+
+                        System . Uri certChainUri ;
+                        if (! System . Uri . TryCreate(certChainUrl, System . UriKind . Absolute, out certChainUri))
+                        {
+                            return false ;
+                        }
+
+                        return certChainUri . Host . Equals(
+                                   Sdk . SIGNATURE_CERT_URL_HOST,
+                                   System . StringComparison . OrdinalIgnoreCase)
+                               && certChainUri . PathAndQuery . StartsWith(Sdk . SIGNATURE_CERT_URL_PATH)
+                               && certChainUri . Scheme == System . Uri . UriSchemeHttps && certChainUri . Port == 443 ;
+                    }
+
+                /// <summary>
+                /// Verifies request signature and manages the caching of the signature
+                ///     certificate
+                /// </summary>
+                /// <param name="serializedSpeechletRequest">
+                /// The serialized Speechlet Request.
+                /// </param>
+                /// <param name="expectedSignature">
+                /// The expected Signature.
+                /// </param>
+                /// <param name="certChainUrl">
+                /// The cert Chain Url.
+                /// </param>
+                /// <returns>
+                /// The <see cref="System.Boolean"/> .
+                /// </returns>
+                public static bool VerifyRequestSignature(
+                    byte[] serializedSpeechletRequest,
+                    string expectedSignature,
+                    string certChainUrl )
+                    {
+                        string certCacheKey = _getCertCacheKey(certChainUrl) ;
+                        Org . BouncyCastle . X509 . X509Certificate cert =
+                            System . Runtime . Caching . MemoryCache . Default . Get(certCacheKey) as
+                                Org . BouncyCastle . X509 . X509Certificate ;
+                        if (cert == null || ! CheckRequestSignature(serializedSpeechletRequest, expectedSignature, cert))
+                        {
+                            // download the cert
+                            // if we don't have it in cache or
+                            // if we have it but it's stale because the current request was signed with a newer cert
+                            // (signaled by signature check fail with cached cert)
+                            cert = RetrieveAndVerifyCertificate(certChainUrl) ;
+                            if (cert == null) return false ;
+
+                            System . Runtime . Caching . MemoryCache . Default . Set(certCacheKey, cert, _policy) ;
+                        }
+
+                        return CheckRequestSignature(serializedSpeechletRequest, expectedSignature, cert) ;
+                    }
+
+                /// <summary>
+                /// Verifies request signature and manages the caching of the signature
+                ///     certificate
+                /// </summary>
+                /// <param name="serializedSpeechletRequest">
+                /// The serialized Speechlet Request.
+                /// </param>
+                /// <param name="expectedSignature">
+                /// The expected Signature.
+                /// </param>
+                /// <param name="certChainUrl">
+                /// The cert Chain Url.
+                /// </param>
+                /// <returns>
+                /// The <see cref="Task"/> .
+                /// </returns>
+                public static async System . Threading . Tasks . Task<bool> VerifyRequestSignatureAsync(
+                    byte[] serializedSpeechletRequest,
+                    string expectedSignature,
+                    string certChainUrl )
+                    {
+                        string certCacheKey = _getCertCacheKey(certChainUrl) ;
+                        Org . BouncyCastle . X509 . X509Certificate cert =
+                            System . Runtime . Caching . MemoryCache . Default . Get(certCacheKey) as
+                                Org . BouncyCastle . X509 . X509Certificate ;
+                        if (cert == null || ! CheckRequestSignature(serializedSpeechletRequest, expectedSignature, cert))
+                        {
+                            // download the cert
+                            // if we don't have it in cache or
+                            // if we have it but it's stale because the current request was signed with a newer cert
+                            // (signaled by signature check fail with cached cert)
+                            cert = await RetrieveAndVerifyCertificateAsync(certChainUrl) ;
+                            if (cert == null) return false ;
+
+                            System . Runtime . Caching . MemoryCache . Default . Set(certCacheKey, cert, _policy) ;
+                        }
+
+                        return CheckRequestSignature(serializedSpeechletRequest, expectedSignature, cert) ;
+                    }
+
+                /// <summary>
+                /// </summary>
+                /// <param name="cert">
+                /// The cert.
+                /// </param>
+                /// <returns>
+                /// The <see cref="System.Boolean"/> .
+                /// </returns>
+                private static bool CheckCertSubjectNames( Org . BouncyCastle . X509 . X509Certificate cert )
+                    {
+                        bool found = false ;
+                        System . Collections . ArrayList subjectNamesList =
+                            (System . Collections . ArrayList) cert . GetSubjectAlternativeNames() ;
+                        for (int i = 0; i < subjectNamesList . Count; i ++)
+                        {
+                            System . Collections . ArrayList subjectNames =
+                                (System . Collections . ArrayList) subjectNamesList[i] ;
+                            for (int j = 0; j < subjectNames . Count; j ++)
+                            {
+                                if (subjectNames[j] is string && subjectNames[j] . Equals(Sdk . ECHO_API_DOMAIN_NAME))
+                                {
+                                    found = true ;
+                                    break ;
+                                }
+                            }
+                        }
+
+                        return found ;
+                    }
+            }
     }
-}

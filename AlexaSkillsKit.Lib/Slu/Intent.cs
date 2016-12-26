@@ -1,41 +1,55 @@
-﻿//  Copyright 2015 Stefan Negritoiu (FreeBusy). See LICENSE file for more information.
-
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using Newtonsoft.Json.Linq;
-
-namespace AlexaSkillsKit.Slu
-{
-    public class Intent
+﻿// --------------------------------------------------------------------------------------------------------------------
+// <copyright company="" file="Intent.cs">
+//   
+// </copyright>
+// <summary>
+//   The intent.
+// </summary>
+// 
+// --------------------------------------------------------------------------------------------------------------------
+namespace AlexaSkillsKit .Slu
     {
         /// <summary>
-        /// 
+        ///     The intent.
         /// </summary>
-        /// <param name="json"></param>
-        /// <returns></returns>
-        public static Intent FromJson(JObject json) {
-            var slots = new Dictionary<string, Slot>();
-            if (json["slots"] != null && json.Value<JObject>("slots").HasValues) {
-                foreach (var slot in json.Value<JObject>("slots").Children()) {
-                    slots.Add(slot.Value<JProperty>().Name, Slot.FromJson(slot.Value<JProperty>().Value as JObject));
-                }
+        public class Intent
+            {
+                /// <summary>
+                ///     Gets or sets the name.
+                /// </summary>
+                public virtual string Name { get ; set ; }
+
+                /// <summary>
+                ///     Gets or sets the slots.
+                /// </summary>
+                public virtual System . Collections . Generic . Dictionary<string, Slot> Slots { get ; set ; }
+
+                /// <summary>
+                /// </summary>
+                /// <param name="json">
+                /// </param>
+                /// <returns>
+                /// The <see cref="Intent"/> .
+                /// </returns>
+                public static Intent FromJson( Newtonsoft . Json . Linq . JObject json )
+                    {
+                        var slots = new System . Collections . Generic . Dictionary<string, Slot>() ;
+                        if (json["slots"] != null
+                            && json . Value<Newtonsoft . Json . Linq . JObject>("slots") . HasValues)
+                        {
+                            foreach (var slot in json . Value<Newtonsoft . Json . Linq . JObject>("slots") . Children())
+                            {
+                                slots . Add(
+                                    Newtonsoft . Json . Linq . Extensions . Value<Newtonsoft . Json . Linq . JProperty>(
+                                        slot) . Name,
+                                    Slot . FromJson(
+                                        Newtonsoft . Json . Linq . Extensions
+                                                . Value<Newtonsoft . Json . Linq . JProperty>(slot) . Value as
+                                            Newtonsoft . Json . Linq . JObject)) ;
+                            }
+                        }
+
+                        return new Intent { Name = json . Value<string>("name"), Slots = slots } ;
+                    }
             }
-
-            return new Intent {
-                Name = json.Value<string>("name"),
-                Slots = slots
-            };
-        }
-
-        public virtual string Name {
-            get;
-            set;
-        }
-
-        public virtual Dictionary<string, Slot> Slots {
-            get;
-            set;
-        }
     }
-}

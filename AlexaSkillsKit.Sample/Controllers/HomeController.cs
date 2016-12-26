@@ -1,17 +1,30 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
-
-namespace Sample.Controllers
-{
-    public class HomeController : Controller
+﻿// --------------------------------------------------------------------------------------------------------------------
+// <copyright company="" file="HomeController.cs">
+//   
+// </copyright>
+// <summary>
+//   The home controller.
+// </summary>
+// 
+// --------------------------------------------------------------------------------------------------------------------
+namespace Sample .Controllers
     {
-        public ActionResult Index() {
-            ViewBag.Title = "Home Page";
+        /// <summary>
+        ///     The home controller.
+        /// </summary>
+        public class HomeController : System . Web . Mvc . Controller
+            {
+                /// <summary>
+                ///     The index.
+                /// </summary>
+                /// <returns>
+                ///     The <see cref="ActionResult" /> .
+                /// </returns>
+                public System . Web . Mvc . ActionResult Index( )
+                    {
+                        this . ViewBag . Title = "Home Page" ;
 
-            return View();
-        }
+                        return this . View() ;
+                    }
+            }
     }
-}

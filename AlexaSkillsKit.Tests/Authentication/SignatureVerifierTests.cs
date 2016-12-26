@@ -1,17 +1,16 @@
-﻿using System;
+﻿using AlexaSkillsKit.Authentication;
 using Xunit;
-using AlexaSkillsKit;
-using AlexaSkillsKit.Authentication;
 
 namespace AlexaSkillsKit.Tests
 {
     public class SignatureVerifierTests
     {
         [Fact]
-        public void VerifyCertificateUrlTest() {
-            // samples from 
+        public void VerifyCertificateUrlTest()
+        {
+            // samples from
             // https://developer.amazon.com/public/solutions/alexa/alexa-skills-kit/docs/developing-an-alexa-skill-as-a-web-service
-            
+
             var validUrls = new string[] {
                 "https://s3.amazonaws.com/echo.api/echo-api-cert.pem",
                 "https://s3.amazonaws.com:443/echo.api/echo-api-cert.pem",
@@ -26,11 +25,13 @@ namespace AlexaSkillsKit.Tests
                 "https://s3.amazonaws.com:563/echo.api/echo-api-cert.pem"
              };
 
-            foreach (var validUrl in validUrls) {
+            foreach (var validUrl in validUrls)
+            {
                 Assert.True(SpeechletRequestSignatureVerifier.VerifyCertificateUrl(validUrl));
             }
 
-            foreach (var invalidUrl in invalidUrls) {
+            foreach (var invalidUrl in invalidUrls)
+            {
                 Assert.False(SpeechletRequestSignatureVerifier.VerifyCertificateUrl(invalidUrl));
             }
         }

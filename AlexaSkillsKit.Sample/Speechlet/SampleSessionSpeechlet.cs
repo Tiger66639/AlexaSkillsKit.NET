@@ -1,11 +1,11 @@
 ﻿//  Copyright 2015 Stefan Negritoiu (FreeBusy). See LICENSE file for more information.
 
+using AlexaSkillsKit.Slu;
+using AlexaSkillsKit.Speechlet;
+using AlexaSkillsKit.UI;
+using NLog;
 using System;
 using System.Collections.Generic;
-using NLog;
-using AlexaSkillsKit.Speechlet;
-using AlexaSkillsKit.Slu;
-using AlexaSkillsKit.UI;
 
 namespace Sample.Controllers
 {
@@ -15,21 +15,22 @@ namespace Sample.Controllers
 
         // Note: NAME_KEY being a JSON property key gets camelCased during serialization
         private const string NAME_KEY = "name";
+
         private const string NAME_SLOT = "Name";
 
-        
-        public override void OnSessionStarted(SessionStartedRequest request, Session session) {            
+        public override void OnSessionStarted(SessionStartedRequest request, Session session)
+        {
             Log.Info("OnSessionStarted requestId={0}, sessionId={1}", request.RequestId, session.SessionId);
         }
 
-
-        public override SpeechletResponse OnLaunch(LaunchRequest request, Session session) {
+        public override SpeechletResponse OnLaunch(LaunchRequest request, Session session)
+        {
             Log.Info("OnLaunch requestId={0}, sessionId={1}", request.RequestId, session.SessionId);
             return GetWelcomeResponse();
         }
 
-
-        public override SpeechletResponse OnIntent(IntentRequest request, Session session) {
+        public override SpeechletResponse OnIntent(IntentRequest request, Session session)
+        {
             Log.Info("OnIntent requestId={0}, sessionId={1}", request.RequestId, session.SessionId);
 
             // Get intent from the request object.
@@ -38,31 +39,35 @@ namespace Sample.Controllers
 
             // Note: If the session is started with an intent, no welcome message will be rendered;
             // rather, the intent specific response will be returned.
-            if ("MyNameIsIntent".Equals(intentName)) {
+            if ("MyNameIsIntent".Equals(intentName))
+            {
                 return SetNameInSessionAndSayHello(intent, session);
-            } 
-            else if ("WhatsMyNameIntent".Equals(intentName)) {
+            }
+            else if ("WhatsMyNameIntent".Equals(intentName))
+            {
                 return GetNameFromSessionAndSayHello(intent, session);
-            } 
-            else {
+            }
+            else
+            {
                 throw new SpeechletException("Invalid Intent");
             }
         }
 
-
-        public override void OnSessionEnded(SessionEndedRequest request, Session session) {
+        public override void OnSessionEnded(SessionEndedRequest request, Session session)
+        {
             Log.Info("OnSessionEnded requestId={0}, sessionId={1}", request.RequestId, session.SessionId);
         }
 
-
         /**
          * Creates and returns a {@code SpeechletResponse} with a welcome message.
-         * 
+         *
          * @return SpeechletResponse spoken and visual welcome message
          */
-        private SpeechletResponse GetWelcomeResponse() {
+
+        private SpeechletResponse GetWelcomeResponse()
+        {
             // Create the welcome message.
-            string speechOutput = 
+            string speechOutput =
                 "Welcome to the Alexa AppKit session sample app, please tell me your name by saying, my name is Sam";
 
             // Here we are setting shouldEndSession to false to not end the session and
@@ -70,16 +75,17 @@ namespace Sample.Controllers
             return BuildSpeechletResponse("Welcome", speechOutput, false);
         }
 
-
         /**
          * Creates a {@code SpeechletResponse} for the intent and stores the extracted name in the
          * Session.
-         * 
+         *
          * @param intent
          *            intent for the request
          * @return SpeechletResponse spoken and visual response the given intent
          */
-        private SpeechletResponse SetNameInSessionAndSayHello(Intent intent, Session session) {
+
+        private SpeechletResponse SetNameInSessionAndSayHello(Intent intent, Session session)
+        {
             // Get the slots from the intent.
             Dictionary<string, Slot> slots = intent.Slots;
 
@@ -88,14 +94,16 @@ namespace Sample.Controllers
             string speechOutput = "";
 
             // Check for name and create output to user.
-            if (nameSlot != null) {
+            if (nameSlot != null)
+            {
                 // Store the user's name in the Session and create response.
                 string name = nameSlot.Value;
                 session.Attributes[NAME_KEY] = name;
                 speechOutput = String.Format(
                     "Hello {0}, now I can remember your name, you can ask me your name by saying, whats my name?", name);
-            } 
-            else {
+            }
+            else
+            {
                 // Render an error since we don't know what the users name is.
                 speechOutput = "I'm not sure what your name is, please try again";
             }
@@ -105,15 +113,16 @@ namespace Sample.Controllers
             return BuildSpeechletResponse(intent.Name, speechOutput, false);
         }
 
-
         /**
          * Creates a {@code SpeechletResponse} for the intent and get the user's name from the Session.
-         * 
+         *
          * @param intent
          *            intent for the request
          * @return SpeechletResponse spoken and visual response for the intent
          */
-        private SpeechletResponse GetNameFromSessionAndSayHello(Intent intent, Session session) {
+
+        private SpeechletResponse GetNameFromSessionAndSayHello(Intent intent, Session session)
+        {
             string speechOutput = "";
             bool shouldEndSession = false;
 
@@ -121,11 +130,13 @@ namespace Sample.Controllers
             string name = (String)session.Attributes[NAME_KEY];
 
             // Check to make sure user's name is set in the session.
-            if (!String.IsNullOrEmpty(name)) {
+            if (!String.IsNullOrEmpty(name))
+            {
                 speechOutput = String.Format("Your name is {0}, goodbye", name);
                 shouldEndSession = true;
-            } 
-            else {
+            }
+            else
+            {
                 // Since the user's name is not set render an error message.
                 speechOutput = "I'm not sure what your name is, you can say, my name is Sam";
             }
@@ -133,10 +144,9 @@ namespace Sample.Controllers
             return BuildSpeechletResponse(intent.Name, speechOutput, shouldEndSession);
         }
 
-
         /**
          * Creates and returns the visual and spoken response with shouldEndSession flag
-         * 
+         *
          * @param title
          *            title for the companion application home card
          * @param output
@@ -145,7 +155,9 @@ namespace Sample.Controllers
          *            should the session be closed
          * @return SpeechletResponse spoken and visual response for the given input
          */
-        private SpeechletResponse BuildSpeechletResponse(string title, string output, bool shouldEndSession) {
+
+        private SpeechletResponse BuildSpeechletResponse(string title, string output, bool shouldEndSession)
+        {
             // Create the Simple card content.
             SimpleCard card = new SimpleCard();
             card.Title = String.Format("SessionSpeechlet - {0}", title);

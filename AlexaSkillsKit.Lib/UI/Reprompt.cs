@@ -1,15 +1,22 @@
-﻿//  Copyright 2015 Stefan Negritoiu (FreeBusy). See LICENSE file for more information.
-
-using System;
-using System.Collections.Generic;
-
-namespace AlexaSkillsKit.UI
-{
-    public class Reprompt
+﻿// --------------------------------------------------------------------------------------------------------------------
+// <copyright company="" file="Reprompt.cs">
+//   
+// </copyright>
+// <summary>
+//   The reprompt.
+// </summary>
+// 
+// --------------------------------------------------------------------------------------------------------------------
+namespace AlexaSkillsKit .UI
     {
-        public OutputSpeech OutputSpeech {
-            get;
-            set;
-        }
+        /// <summary>
+        ///     The reprompt.
+        /// </summary>
+        public class Reprompt
+            {
+                /// <summary>
+                ///     Gets or sets the output speech.
+                /// </summary>
+                public OutputSpeech OutputSpeech { get ; set ; }
+            }
     }
-}

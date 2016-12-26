@@ -1,19 +1,33 @@
-﻿//  Copyright 2015 Stefan Negritoiu (FreeBusy). See LICENSE file for more information.
-
-using System;
-using System.Collections.Generic;
-
-namespace AlexaSkillsKit.UI
-{
-    public class SimpleCard : Card
+﻿// --------------------------------------------------------------------------------------------------------------------
+// <copyright company="" file="SimpleCard.cs">
+//   
+// </copyright>
+// <summary>
+//   The simple card.
+// </summary>
+// 
+// --------------------------------------------------------------------------------------------------------------------
+namespace AlexaSkillsKit .UI
     {
-        public override string Type {
-            get { return "Simple"; }
-        }
+        /// <summary>
+        ///     The simple card.
+        /// </summary>
+        public class SimpleCard : Card
+            {
+                /// <summary>
+                ///     Gets or sets the content.
+                /// </summary>
+                public virtual string Content { get ; set ; }
 
-        public virtual string Content {
-            get;
-            set;
-        }
+                /// <summary>
+                ///     Gets the type.
+                /// </summary>
+                public override string Type
+                    {
+                        get
+                            {
+                                return "Simple" ;
+                            }
+                    }
+            }
     }
-}
