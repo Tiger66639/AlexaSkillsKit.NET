@@ -4,7 +4,6 @@
 
 using System.Diagnostics.CodeAnalysis;
 using System.Net.Http.Headers;
-using System.Web.Http;
 
 #if Handle_PageResultOfT
 using System.Web.Http.OData;

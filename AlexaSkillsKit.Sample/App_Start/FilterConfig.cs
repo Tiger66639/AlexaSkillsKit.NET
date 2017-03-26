@@ -1,6 +1,4 @@
-﻿using System.Web.Mvc;
-
-namespace Sample
+﻿namespace Sample
 {
     public class FilterConfig
     {

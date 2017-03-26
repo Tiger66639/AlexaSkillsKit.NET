@@ -1,22 +1,22 @@
 ﻿// --------------------------------------------------------------------------------------------------------------------
 // <copyright company="" file="OutputSpeech.cs">
-//   
+//
 // </copyright>
 // <summary>
 //   The output speech.
 // </summary>
-// 
+//
 // --------------------------------------------------------------------------------------------------------------------
-namespace AlexaSkillsKit .UI
+namespace AlexaSkillsKit.UI
+{
+    /// <summary>
+    ///     The output speech.
+    /// </summary>
+    public abstract class OutputSpeech
     {
         /// <summary>
-        ///     The output speech.
+        ///     Gets the type.
         /// </summary>
-        public abstract class OutputSpeech
-            {
-                /// <summary>
-                ///     Gets the type.
-                /// </summary>
-                public abstract string Type { get ; }
-            }
+        public abstract string Type { get; }
     }
+}

@@ -100,16 +100,6 @@
     <None Include="app.config" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="F:\Designer\Trunk\Designer\Designer.csproj">
-      <Project>{aaf10b91-98fa-46c0-bb4a-e4018001d3ee}</Project>
-      <Name>Designer</Name>
-    </ProjectReference>
-    <ProjectReference Include="F:\Designer\Trunk\HAB\HAB.csproj">
-      <Project>{2cdd4836-1ac7-47c8-b878-5af7ea721b2b}</Project>
-      <Name>HAB</Name>
-    </ProjectReference>
-  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

@@ -1,7 +1,4 @@
-﻿using Microsoft.Owin.Security.OAuth;
-using System.Web.Http;
-
-namespace Sample
+﻿namespace Sample
 {
     public static class WebApiConfig
     {

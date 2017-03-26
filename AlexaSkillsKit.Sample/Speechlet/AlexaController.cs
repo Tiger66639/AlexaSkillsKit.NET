@@ -1,7 +1,6 @@
 ﻿//  Copyright 2015 Stefan Negritoiu (FreeBusy). See LICENSE file for more information.
 
 using System.Net.Http;
-using System.Web.Http;
 
 namespace Sample.Controllers
 {

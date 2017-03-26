@@ -1,8 +1,6 @@
 using Sample.Areas.HelpPage.ModelDescriptions;
 using Sample.Areas.HelpPage.Models;
 using System;
-using System.Web.Http;
-using System.Web.Mvc;
 
 namespace Sample.Areas.HelpPage.Controllers
 {
