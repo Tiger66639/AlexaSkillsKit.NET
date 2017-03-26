@@ -73,4 +73,7 @@ Global
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
+	GlobalSection(CodeDx) = preSolution
+		CodeDxProjectId = 
+	EndGlobalSection
 EndGlobal
